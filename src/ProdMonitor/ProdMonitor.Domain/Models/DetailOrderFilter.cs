@@ -1,0 +1,15 @@
+﻿using ProdMonitor.Domain.Models.Enums;
+
+namespace ProdMonitor.Domain.Models
+{
+    public class DetailOrderFilter(Guid? userId,
+        DetailOrderStatusType? status,
+        int skip = 0,
+        int limit = int.MaxValue)
+    {
+        public Guid? UserId { get; set; } = userId;
+        public DetailOrderStatusType? Status { get; set; } = status;
+        public int Skip { get; set; } = skip;
+        public int Limit { get; set; } = limit;
+    }
+}

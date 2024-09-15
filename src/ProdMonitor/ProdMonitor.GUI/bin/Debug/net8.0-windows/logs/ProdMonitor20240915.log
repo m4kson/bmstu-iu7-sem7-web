@@ -1,0 +1,36 @@
+2024-09-15 11:33:01.9873|INFO|Starting up the application...||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:08.0621|INFO|Attempt to login with email: admin||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:09.4406|INFO|Attempt to login with email: admin||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:09.4725|ERROR|An exception occurred while iterating over the results of a query for context type 'ProdMonitor.DataAccess.Context.ProdMonitorContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi||||System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+
+2024-09-15 11:33:09.5848|ERROR|Login failed for email admin||User: DESKTOP-U7M1OEO\maksi||||ProdMonitor.Domain.Exceptions.UserRepositoryException: Failed to retrieve user by email
+ ---> System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at ProdMonitor.DataAccess.Repositories.UserRepository.GetUserByEmailAsync(String email) in D:\study\IU7\sem6\ppo\ppo\src\ProdMonitor\ProdMonitor.DataAccess\Repositories\UserRepository.cs:line 116
+   --- End of inner exception stack trace ---
+   at ProdMonitor.DataAccess.Repositories.UserRepository.GetUserByEmailAsync(String email) in D:\study\IU7\sem6\ppo\ppo\src\ProdMonitor\ProdMonitor.DataAccess\Repositories\UserRepository.cs:line 124
+   at ProdMonitor.Application.Services.AuthenticationService.LoginAsync(LoginModel authModel) in D:\study\IU7\sem6\ppo\ppo\src\ProdMonitor\ProdMonitor.Application\Services\AuthenticationService.cs:line 32
+
+2024-09-15 11:33:09.6779|INFO|User admin successfully logged in||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:21.8645|INFO|Starting up the application...||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:27.9097|INFO|Attempt to login with email: admin||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:29.0706|INFO|User admin successfully logged in||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:33.0308|INFO|Attempting to retrieve all users with the specified filter.||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:33.0411|WARN|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:33.0426|WARN|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:33:33.0538|INFO|Successfully retrieved 11 users.||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:04.6563|INFO|Starting up the application...||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:13.2485|INFO|Attempt to login with email: admin||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:14.4549|INFO|User admin successfully logged in||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:17.3830|INFO|Attempting to retrieve all users with the specified filter.||User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:17.3929|WARN|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:17.3946|WARN|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi
+2024-09-15 11:39:17.4057|INFO|Successfully retrieved 11 users.||User: DESKTOP-U7M1OEO\maksi
