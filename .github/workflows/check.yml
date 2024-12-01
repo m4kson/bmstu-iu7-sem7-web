@@ -59,13 +59,24 @@ jobs:
   integration-tests:
     name: Integration Tests
     runs-on: ubuntu-latest
-    env:
-      POETRY_VIRTUALENVS_CREATE: false
-      TESTCONTAINER_DOCKER_NETWORK: tomodachi-testcontainers
-      DOCKER_BUILDKIT: 1
     needs:
       - build
       - unit-tests
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpassword
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U testuser"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -73,13 +84,17 @@ jobs:
       - name: Check Docker Availability
         run: docker run hello-world
 
-      - name: Create Docker network for running Testcontianers
-        run: docker network create ${{ env.TESTCONTAINER_DOCKER_NETWORK }}
-
       - name: Set up Test Environment
         run: dotnet --info
 
       - name: Run Integration Tests
+        env:
+            # Передаем переменные окружения, чтобы тесты могли подключаться к сервисам
+            POSTGRES_HOST: localhost
+            POSTGRES_PORT: 5432
+            POSTGRES_USER: testuser
+            POSTGRES_PASSWORD: testpassword
+            POSTGRES_DB: testdb
         run: |
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj --logger:"console;verbosity=detailed"
