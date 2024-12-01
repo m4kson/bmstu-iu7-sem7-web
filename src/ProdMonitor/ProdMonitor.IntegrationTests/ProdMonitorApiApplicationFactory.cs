@@ -1,3 +1,4 @@
+using DotNet.Testcontainers.Builders;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,14 @@ namespace ProdMonitor.IntegrationTests;
 
 public class ProdMonitorApiApplicationFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
-    private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder().Build();
+    private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder()
+        .WithImage("postgres:15-alpine")
+        .WithCleanUp(true)
+        .WithDatabase("testdb")
+        .WithUsername("testuser")
+        .WithPassword("testpassword")
+        .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5432))
+        .Build();
     
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
@@ -31,7 +39,9 @@ public class ProdMonitorApiApplicationFactory : WebApplicationFactory<Program>, 
         await _dbContainer.StartAsync();
         var prodMonitorContext = new ProdMonitorContext(new DbContextOptionsBuilder<ProdMonitorContext>()
             .UseNpgsql(_dbContainer.GetConnectionString()).Options);
+        Console.WriteLine("Starting database migrations...");
         await prodMonitorContext.Database.MigrateAsync();
+        Console.WriteLine("Database migrations completed.");
         await SeedTestData(prodMonitorContext);
     }
     

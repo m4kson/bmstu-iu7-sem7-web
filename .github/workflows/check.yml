@@ -96,6 +96,8 @@ jobs:
             POSTGRES_PASSWORD: testpassword
             POSTGRES_DB: testdb
         run: |
+          pg_isready -h localhost -p 5432 -U testuser
+          docker logs $(docker ps -q --filter ancestor=postgres:15-alpine)
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj --logger:"console;verbosity=detailed"
 
