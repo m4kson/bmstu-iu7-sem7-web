@@ -66,9 +66,6 @@ jobs:
       docker:
         image: docker:dind
         options: --privileged
-    env:
-      DOCKER_HOST: tcp://localhost:2375
-      DOCKER_TLS_CERTDIR: ""
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -88,10 +85,13 @@ jobs:
         run: dotnet --info
 
       - name: Run Integration Tests
+        env:
+          DOCKER_HOST: unix:///var/run/docker.sock
         run: |
           docker info
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj
+
 
 
 
