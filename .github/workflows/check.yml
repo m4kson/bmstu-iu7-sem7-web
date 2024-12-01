@@ -55,6 +55,7 @@ jobs:
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj
 
+
   integration-tests:
     name: Integration Tests
     runs-on: ubuntu-latest
@@ -72,6 +73,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Ensure Docker is Running
+        run: |
+          sudo systemctl start docker
+          sudo systemctl status docker
+          docker info
+
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
@@ -85,6 +92,8 @@ jobs:
           docker info
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj
+
+
 
   end-to-end-tests:
     name: End-to-End Tests
