@@ -61,7 +61,13 @@ jobs:
     needs:
       - build
       - unit-tests
-    
+    services:
+      docker:
+        image: docker:dind
+        options: --privileged
+    env:
+      DOCKER_HOST: tcp://localhost:2375
+      DOCKER_TLS_CERTDIR: ""
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
