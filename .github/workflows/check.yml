@@ -58,19 +58,10 @@ jobs:
   integration-tests:
     name: Integration Tests
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/dotnet/sdk:8.0
     needs:
       - build
       - unit-tests
-    services:
-      docker:
-        image: docker:dind
-        options: --privileged
-    env:
-      DOCKER_HOST: tcp://localhost:2375
-      DOCKER_TLS_CERTDIR: ""
-      DOCKER_DRIVER: overlay2
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
