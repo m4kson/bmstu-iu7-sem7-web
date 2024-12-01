@@ -10137,11 +10137,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
+      "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
       "projectName": "ProdMonitor.IntegrationTests",
-      "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
+      "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
       "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-      "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/obj/",
+      "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -10157,8 +10157,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CG42+tWtJAQ=",
+  "dgSpecHash": "czcZftz5rno=",
   "success": true,
-  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj",
+  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj",
   "expectedPackageFiles": [
     "/Users/m4ks0n/.nuget/packages/microsoft.entityframeworkcore/8.0.8/microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "/Users/m4ks0n/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.8/microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",

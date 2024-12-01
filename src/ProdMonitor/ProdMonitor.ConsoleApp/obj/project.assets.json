@@ -13192,11 +13192,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
+      "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
       "projectName": "ProdMonitor.ConsoleApp",
-      "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
+      "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
       "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-      "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/obj/",
+      "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -13212,26 +13212,26 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
             },
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
             },
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
             },
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj"
             },
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj"
             },
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj"
             },
-            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
-              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
             }
           }
         }
@@ -13337,7 +13337,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "ProdMonitor.ConsoleApp depends on Microsoft.EntityFrameworkCore (>= 9.0.0-rc.2) but Microsoft.EntityFrameworkCore 9.0.0-rc.2 was not found. An approximate best match of Microsoft.EntityFrameworkCore 9.0.0-rc.2.24474.1 was resolved.",
+      "message": "ProdMonitor.ConsoleApp зависит от Microsoft.EntityFrameworkCore (>= 9.0.0-rc.2), но Microsoft.EntityFrameworkCore 9.0.0-rc.2 не найден. Использовано наилучшее приближенное соответствие Microsoft.EntityFrameworkCore 9.0.0-rc.2.24474.1.",
       "libraryId": "Microsoft.EntityFrameworkCore",
       "targetGraphs": [
         "net8.0"

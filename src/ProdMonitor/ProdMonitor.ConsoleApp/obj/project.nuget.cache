@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YiE6ZvvokrA=",
+  "dgSpecHash": "tGukPjjnV4k=",
   "success": true,
-  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
+  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
   "expectedPackageFiles": [
     "/Users/m4ks0n/.nuget/packages/allure.commons/3.5.0.73/allure.commons.3.5.0.73.nupkg.sha512",
     "/Users/m4ks0n/.nuget/packages/allure.net.commons/2.12.1/allure.net.commons.2.12.1.nupkg.sha512",
@@ -254,7 +254,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "ProdMonitor.ConsoleApp depends on Microsoft.EntityFrameworkCore (>= 9.0.0-rc.2) but Microsoft.EntityFrameworkCore 9.0.0-rc.2 was not found. An approximate best match of Microsoft.EntityFrameworkCore 9.0.0-rc.2.24474.1 was resolved.",
+      "message": "ProdMonitor.ConsoleApp зависит от Microsoft.EntityFrameworkCore (>= 9.0.0-rc.2), но Microsoft.EntityFrameworkCore 9.0.0-rc.2 не найден. Использовано наилучшее приближенное соответствие Microsoft.EntityFrameworkCore 9.0.0-rc.2.24474.1.",
       "libraryId": "Microsoft.EntityFrameworkCore",
       "targetGraphs": [
         "net8.0"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dux8UNByZpw=",
+  "dgSpecHash": "B5eWZUP2lqc=",
   "success": true,
-  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj",
+  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj",
   "expectedPackageFiles": [
     "/Users/m4ks0n/.nuget/packages/allure.commons/3.5.0.73/allure.commons.3.5.0.73.nupkg.sha512",
     "/Users/m4ks0n/.nuget/packages/allure.net.commons/2.12.1/allure.net.commons.2.12.1.nupkg.sha512",

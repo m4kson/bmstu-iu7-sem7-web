@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj": {}
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj": {}
   },
   "projects": {
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj",
         "projectName": "ProdMonitor.Application",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
               }
             }
           }
@@ -89,14 +89,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
         "projectName": "ProdMonitor.ConsoleApp",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/ProdMonitor.ConsoleApp.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.ConsoleApp/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.ConsoleApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -112,26 +112,26 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
               }
             }
           }
@@ -232,14 +232,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj",
         "projectName": "ProdMonitor.DataAccess",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -255,8 +255,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
               }
             }
           }
@@ -325,14 +325,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj",
         "projectName": "ProdMonitor.Domain",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -390,14 +390,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj",
         "projectName": "ProdMonitor.E2E",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.E2E/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -413,8 +413,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
               }
             }
           }
@@ -491,14 +491,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
         "projectName": "ProdMonitor.IntegrationTests",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -514,8 +514,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj"
               }
             }
           }
@@ -592,14 +592,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj",
         "projectName": "ProdMonitor.Test",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Test/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -615,14 +615,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
               }
             }
           }
@@ -723,14 +723,14 @@
         }
       }
     },
-    "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
+    "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj",
+        "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj",
         "projectName": "ProdMonitor.Web",
-        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj",
+        "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj",
         "packagesPath": "/Users/m4ks0n/.nuget/packages/",
-        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Web/obj/",
+        "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Web/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
@@ -746,14 +746,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
               },
-              "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
-                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
+              "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+                "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
               }
             }
           }

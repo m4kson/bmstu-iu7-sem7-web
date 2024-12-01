@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N+uWbjmmTW4=",
+  "dgSpecHash": "nr4rjy5wCa4=",
   "success": true,
-  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
+  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "/Users/m4ks0n/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/Users/m4ks0n/.nuget/packages/docker.dotnet/3.125.15/docker.dotnet.3.125.15.nupkg.sha512",
