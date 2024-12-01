@@ -2,8 +2,8 @@
 
 namespace ProdMonitor.Domain.Models
 {
-    public class DetailOrderFilter(Guid? userId,
-        DetailOrderStatusType? status,
+    public class DetailOrderFilter(Guid? userId = null,
+        DetailOrderStatusType? status = null,
         int skip = 0,
         int limit = int.MaxValue)
     {

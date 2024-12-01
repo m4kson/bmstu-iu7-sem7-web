@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HvHSDmND4O4=",
+  "dgSpecHash": "a5R0jvPI22M=",
   "success": true,
-  "projectFilePath": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.Domain\\ProdMonitor.Domain.csproj",
+  "projectFilePath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\maksi\\.nuget\\packages\\serilog\\4.0.1\\serilog.4.0.1.nupkg.sha512"
+    "/Users/m4ks0n/.nuget/packages/serilog/4.0.1/serilog.4.0.1.nupkg.sha512"
   ],
   "logs": []
 }

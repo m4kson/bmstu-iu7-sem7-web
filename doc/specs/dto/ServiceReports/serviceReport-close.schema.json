@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель для закрытия отчета об обслуживании.",
+    "required": [
+        "totoalPrice",
+        "description"
+    ],
+    "properties": {
+        "totoalPrice": {
+            "type": "number",
+            "description": "Общая стоимость обслуживания в рублях."
+        },
+        "description": {
+            "type": "string",
+            "description": "Описание проделанной работы."
+        }
+    }
+}

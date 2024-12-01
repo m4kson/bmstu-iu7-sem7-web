@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель заявки на обслуживание.",
+    "required": [
+        "id",
+        "lineId",
+        "userId",
+        "requestDate",
+        "status",
+        "type",
+        "description"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор заявки."
+        },
+        "lineId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор линии обслуживания."
+        },
+        "userId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор пользователя, создавшего заявку."
+        },
+        "requestDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата и время создания заявки."
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "Opened",
+                "InProgress",
+                "Closed"
+            ],
+            "description": "Статус заявки."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "Inspection",
+                "Repair"
+            ],
+            "description": "Тип заявки."
+        },
+        "description": {
+            "type": "string",
+            "description": "Описание заявки."
+        }
+    }
+}

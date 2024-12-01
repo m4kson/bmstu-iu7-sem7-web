@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель детали.",
+    "required": [
+        "id",
+        "name",
+        "country",
+        "amount",
+        "price",
+        "length",
+        "width",
+        "height"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Внутренний идентификатор детали."
+        },
+        "name": {
+            "type": "string",
+            "description": "Название детали."
+        },
+        "country": {
+            "type": "string",
+            "description": "Страна производства."
+        },
+        "amount": {
+            "type": "integer",
+            "description": "Количество деталей на складе."
+        },
+        "price": {
+            "type": "float",
+            "description": "Цена детали в рублях."
+        },
+        "length": {
+            "type": "float",
+            "description": "Длина детали в метрах."
+        },
+        "width": {
+            "type": "float",
+            "description": "Ширина детали в метрах."
+        },
+        "height": {
+            "type": "float",
+            "description": "Высота детали в метрах."
+        }
+    }
+}

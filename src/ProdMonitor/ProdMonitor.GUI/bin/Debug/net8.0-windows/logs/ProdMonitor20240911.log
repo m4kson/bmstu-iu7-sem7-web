@@ -1,9 +1,0 @@
-2024-09-11 15:37:16.4834|INFO|Starting up the application...||User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:03.3510|INFO|Starting up the application...||User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:38.8007|INFO|Attempt to login with email: admin||User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:40.2792|INFO|User admin successfully logged in||User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:58.7084|INFO|Attempting to retrieve all users with the specified filter.||User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:58.7195|WARN|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:58.7214|WARN|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.|Microsoft.EntityFrameworkCore.Query|User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:39:58.7330|INFO|Successfully retrieved 11 users.||User: DESKTOP-U7M1OEO\maksi
-2024-09-11 15:40:51.5212|INFO|Starting up the application...||User: DESKTOP-U7M1OEO\maksi

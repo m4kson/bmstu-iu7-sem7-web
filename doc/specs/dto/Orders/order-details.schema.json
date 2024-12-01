@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель для деталей заказа.",
+    "required": [
+        "detailId",
+        "amount"
+    ],
+    "properties": {
+        "detailId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор детали."
+        },
+        "amount": {
+            "type": "integer",
+            "description": "Количество деталей."
+        }
+    }
+}

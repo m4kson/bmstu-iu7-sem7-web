@@ -3018,41 +3018,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maksi\\.nuget\\packages\\": {}
+    "/Users/m4ks0n/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.GUI\\ProdMonitor.GUI.csproj",
+      "projectUniqueName": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.GUI/ProdMonitor.GUI.csproj",
       "projectName": "ProdMonitor.GUI",
-      "projectPath": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.GUI\\ProdMonitor.GUI.csproj",
-      "packagesPath": "C:\\Users\\maksi\\.nuget\\packages\\",
-      "outputPath": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.GUI\\obj\\",
+      "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.GUI/ProdMonitor.GUI.csproj",
+      "packagesPath": "/Users/m4ks0n/.nuget/packages/",
+      "outputPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.GUI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/m4ks0n/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.Application\\ProdMonitor.Application.csproj": {
-              "projectPath": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.Application\\ProdMonitor.Application.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Application/ProdMonitor.Application.csproj"
             },
-            "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.DataAccess\\ProdMonitor.DataAccess.csproj": {
-              "projectPath": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.DataAccess\\ProdMonitor.DataAccess.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.DataAccess/ProdMonitor.DataAccess.csproj"
             },
-            "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.Domain\\ProdMonitor.Domain.csproj": {
-              "projectPath": "D:\\study\\IU7\\sem7\\web\\bmstu-iu7-sem7-web\\src\\ProdMonitor\\ProdMonitor.Domain\\ProdMonitor.Domain.csproj"
+            "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj": {
+              "projectPath": "/Users/m4ks0n/study/IU7/sem7/web/web/src/ProdMonitor/ProdMonitor.Domain/ProdMonitor.Domain.csproj"
             }
           }
         }
@@ -3140,7 +3138,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

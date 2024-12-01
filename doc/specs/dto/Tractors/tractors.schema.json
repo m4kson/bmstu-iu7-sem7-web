@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Результат поиска тракторов по фильтрам.",
+    "required": [
+      "items",
+      "count"
+    ],
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "tractor.schema.json"
+        },
+        "description": "Тракторы, найденные по фильтрам."
+      },
+      "count": {
+        "type": "integer",
+        "description": "Количество тракторов, найденных по фильтрам."
+      }
+    }
+  }
+  

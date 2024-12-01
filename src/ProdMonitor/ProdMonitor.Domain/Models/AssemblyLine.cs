@@ -10,12 +10,11 @@ namespace ProdMonitor.Domain.Models
         public float Height { get; set; }
         public float Width { get; set; }
         public LineStatusType Status { get; set; }
-        public int Production { get; set; }
         public int DownTime { get; set; }
         public int InspectionsPerYear { get; set; }
         public DateOnly LastInspection { get; set; }
         public DateOnly NextInspection { get; set; }
-        public int DefectRate { get; set; }
+        public float DefectRate { get; set; }
 
         public ICollection<Tractor> Tractors { get; set; }
         public ICollection<Detail> Details { get; set; }
@@ -26,12 +25,11 @@ namespace ProdMonitor.Domain.Models
             float height,
             float width,
             LineStatusType status,
-            int production,
             int downTime,
             int inspectionsPerYear,
             DateOnly lastInspection,
             DateOnly nextInspection,
-            int defectRate,
+            float defectRate,
             ICollection<Tractor>? tractors = null,
             ICollection<Detail>? details = null)
         {
@@ -41,7 +39,6 @@ namespace ProdMonitor.Domain.Models
             Height = height;
             Width = width;
             Status = status;
-            Production = production;
             DownTime = downTime;
             InspectionsPerYear = inspectionsPerYear;
             LastInspection = lastInspection;

@@ -113,5 +113,29 @@ namespace ProdMonitor.DataAccess.Repositories
                 throw new TractorRepositoryException("Failed to retrieve tractor", ex);
             }
         }
+
+        public Task DeleteTractorAsync(Guid id)
+        {
+            try
+            {
+                var tractor = _context.Tractors
+                    .FirstOrDefault(t => t.Id == id);
+                if (tractor == null)
+                {
+                    throw new TractorNotFoundException("Tractor not found.");
+                }
+
+                _context.Tractors.Remove(tractor);
+                return _context.SaveChangesAsync();
+            }
+            catch (TractorNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new TractorRepositoryException("Failed to delete tractor", ex);
+            }
+        }
     }
 }

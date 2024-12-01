@@ -744,9 +744,6 @@ namespace ProdMonitor.ConsoleApp
             var statusInput = Console.ReadLine();
             var status = Enum.Parse<LineStatusType>(statusInput);
 
-            Console.WriteLine("Введите количество производимых тракторов: ");
-            var production = int.Parse(Console.ReadLine());
-
             Console.WriteLine("Введите время простоя: ");
             var downTime = int.Parse(Console.ReadLine());
 
@@ -760,9 +757,9 @@ namespace ProdMonitor.ConsoleApp
             var nextInspection = DateOnly.Parse(Console.ReadLine());
 
             Console.WriteLine("Введите процент брака: ");
-            var defectRate = int.Parse(Console.ReadLine());
+            var defectRate = float.Parse(Console.ReadLine());
 
-            var newLine = new AssemblyLineCreate(name, length, height, width, status, production, downTime, inspectionsPerYear, lastInspection, nextInspection, defectRate);
+            var newLine = new AssemblyLineCreate(name, length, height, width, status, downTime, inspectionsPerYear, lastInspection, nextInspection, defectRate);
 
             try
             {

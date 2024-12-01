@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель для создания заказа.",
+    "required": [
+        "orderDetails"
+    ],
+    "properties": {
+        "orderDetails": {
+            "type": "array",
+            "items": {
+                "$ref": "order-details.schema.json"
+            },
+            "description": "Детали заказа."
+        }
+    }
+}

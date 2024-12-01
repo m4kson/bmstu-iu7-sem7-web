@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель отчета об обслуживании.",
+    "required": [
+        "id",
+        "lineId",
+        "userId",
+        "requestId",
+        "openDate",
+        "closeDate",
+        "totoalPrice",
+        "description"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор отчета."
+        },
+        "lineId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор линии обслуживания."
+        },
+        "userId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор пользователя, создавшего отчет."
+        },
+        "requestId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор заявки, по которой создан отчет."
+        },
+        "openDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата и время начала обслуживания."
+        },
+        "closeDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата и время окончания обслуживания.",
+            "nullable": true
+        },
+        "totoalPrice": {
+            "type": "float",
+            "description": "Общая стоимость обслуживания в рублях.",
+            "nullable": true
+        },
+        "description": {
+            "type": "string",
+            "description": "Описание обслуживания.",
+            "nullable": true
+        }
+    }
+}

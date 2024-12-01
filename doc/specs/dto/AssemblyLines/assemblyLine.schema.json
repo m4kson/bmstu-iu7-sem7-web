@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель производственной линии.",
+    "required": [
+        "id",
+        "name",
+        "length",
+        "width",
+        "height",
+        "status",
+        "downTime",
+        "inspectionsAmountPerYear",
+        "lastInspectionDate",
+        "nextInspectionDate",
+        "defectRate"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Внутренний идентификатор производственной линии."
+        },
+        "name": {
+            "type": "string",
+            "description": "Название производственной линии."
+        },
+        "length": {
+            "type": "number",
+            "description": "Длина линии в метрах."
+        },
+        "width": {
+            "type": "number",
+            "description": "Ширина линии в метрах."
+        },
+        "height": {
+            "type": "number",
+            "description": "Высота линии в метрах."
+        },
+        "status": {
+            "type": "string",
+            "description": "Статус линиии."
+        },
+        "downTime": {
+            "type": "integer",
+            "description": "Время простоя в минутах."
+        },
+        "inspectionsAmountPerYear": {
+            "type": "integer",
+            "description": "Количество техосмотров в год."
+        },
+        "lastInspectionDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Дата последнего техосмотра."
+        },
+        "nextInspectionDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Дата следующего техосмотра."
+        },
+        "defectRate": {
+            "type": "integer",
+            "description": "Процент брака."
+        }
+    }
+}

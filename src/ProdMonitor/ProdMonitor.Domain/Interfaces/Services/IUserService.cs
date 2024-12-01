@@ -9,5 +9,7 @@ namespace ProdMonitor.Domain.Interfaces.Services
         Task<User> GetUserById(Guid id);
 
         Task<User> UpdateUserRole(Guid userId, UserUpdateRole role);
+        
+        Task<User> UpdateUser(Guid userId, RegisterModel userData);
     }
 }

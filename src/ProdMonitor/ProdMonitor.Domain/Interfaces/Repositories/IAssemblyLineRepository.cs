@@ -11,5 +11,7 @@ namespace ProdMonitor.Domain.Interfaces.Repositories
         Task<AssemblyLine?> GetAssemblyLineByIdAsync(Guid id);
 
         Task<AssemblyLine> UpdateAssemblyLineAsync(Guid id, AssemblyLineUpdate assemblyLineUpdate);
+        
+        Task DeleteAssemblyLineAsync(Guid id);
     }
 }

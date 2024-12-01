@@ -58,8 +58,18 @@ namespace ProdMonitor.Application.Services
             try
             {
                 var requests = await _requestRepository.GetAllServiceRequestsAsync(filter);
+                if (!requests.Any())
+                {
+                    _logger.Warning("No service requests found");
+                    throw new RequestNotFoundException("No requests found");
+                }
+
                 _logger.Information("Successfully retrieved {RequestCount} service requests", requests.Count);
                 return requests;
+            }
+            catch (RequestNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -82,6 +92,10 @@ namespace ProdMonitor.Application.Services
                 }
                 _logger.Information("Successfully retrieved service request with ID {RequestId}", id);
                 return request;
+            }
+            catch (RequestNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

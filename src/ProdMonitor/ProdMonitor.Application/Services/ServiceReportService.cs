@@ -76,6 +76,10 @@ namespace ProdMonitor.Application.Services
 
                 return createdReport;
             }
+            catch (ArgumentException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 _logger.Error(ex, "Failed to create service report for request ID {RequestId}", report.RequestId);
@@ -89,8 +93,17 @@ namespace ProdMonitor.Application.Services
             try
             {
                 var reports = await _serviceReportRepository.GetAllServiceReportsAsync(filter);
+                if (!reports.Any())
+                {
+                    _logger.Warning("No service reports found");
+                    throw new ReportNotFoundException("No reports found");
+                }
                 _logger.Information("Successfully retrieved {ReportCount} service reports", reports.Count);
                 return reports;
+            }
+            catch (ReportNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -110,8 +123,13 @@ namespace ProdMonitor.Application.Services
                     _logger.Warning("Service report with ID {ReportId} not found", id);
                     throw new ReportNotFoundException($"Report with id {id} not found");
                 }
+
                 _logger.Information("Successfully retrieved service report with ID {ReportId}", id);
                 return report;
+            }
+            catch (ReportNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -132,11 +150,12 @@ namespace ProdMonitor.Application.Services
 
                 _logger.Information("Service report with ID {ReportId} closed successfully", id);
 
-                var closedRequest = await _serviceRequestRepository.UpdateServiceRequestAsync(closedReport.RequestId, new ServiceRequestUpdate(status: RequestStatusType.Closed));
-                
+                var closedRequest = await _serviceRequestRepository.UpdateServiceRequestAsync(closedReport.RequestId,
+                    new ServiceRequestUpdate(status: RequestStatusType.Closed));
+
                 _logger.Information("Request ID {RequestId} updated to Closed", closedReport.RequestId);
 
-                var additionalDownTime = (int)(closedReport.CloseDate.Value - closedRequest.RequestDate).TotalHours;
+                var additionalDownTime = (int) (closedReport.CloseDate.Value - closedRequest.RequestDate).TotalHours;
                 var assemblyLine = await _assemblyLineRepository.GetAssemblyLineByIdAsync(closedReport.LineId);
                 var newDownTime = assemblyLine.DownTime + additionalDownTime;
 
@@ -153,18 +172,23 @@ namespace ProdMonitor.Application.Services
                             lastInspection: DateOnly.FromDateTime(newLastInspectionDate),
                             nextInspection: DateOnly.FromDateTime(newNextInspectionDate)));
 
-                    _logger.Information("Assembly line ID {LineId} updated with new inspection dates", closedReport.LineId);
+                    _logger.Information("Assembly line ID {LineId} updated with new inspection dates",
+                        closedReport.LineId);
                 }
                 else
                 {
                     await _assemblyLineRepository.UpdateAssemblyLineAsync(closedReport.LineId,
                         new AssemblyLineUpdate(status: LineStatusType.Working,
-                        downTime: newDownTime));
+                            downTime: newDownTime));
 
                     _logger.Information("Assembly line ID {LineId} updated with new down time", closedReport.LineId);
                 }
-                
+
                 return closedReport;
+            }
+            catch (ReportNotFoundException)
+            {
+                throw ;
             }
             catch (Exception ex)
             {

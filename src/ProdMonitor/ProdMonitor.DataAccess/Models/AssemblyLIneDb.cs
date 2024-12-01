@@ -12,12 +12,11 @@ namespace ProdMonitor.DataAccess.Models
         public float Height { get; set; }
         public float Width { get; set; }
         public LineStatusTypeDb Status { get; set; }
-        public int Production { get; set; }
         public int DownTime { get; set; }
         public int InspectionsPerYear { get; set; }
         public DateOnly LastInspection { get; set; }
         public DateOnly NextInspection { get; set; }
-        public int DefectRate { get; set; }
+        public float DefectRate { get; set; }
 
         public virtual ICollection<TractorDb> Tractors { get; set; }
         public virtual ICollection<ServiceReportDb> ServiceReports { get; set; }
@@ -31,12 +30,11 @@ namespace ProdMonitor.DataAccess.Models
             float height,
             float width,
             LineStatusTypeDb status,
-            int production,
             int downTime,
             int inspectionsPerYear,
             DateOnly lastInspection,
             DateOnly nextInspection,
-            int defectRate)
+            float defectRate)
         {
             Id = id;
             Name = name;
@@ -44,7 +42,6 @@ namespace ProdMonitor.DataAccess.Models
             Height = height;
             Width = width;
             Status = status;
-            Production = production;
             DownTime = downTime;
             InspectionsPerYear = inspectionsPerYear;
             LastInspection = lastInspection;

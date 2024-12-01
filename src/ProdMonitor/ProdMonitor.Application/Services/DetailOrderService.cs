@@ -57,6 +57,14 @@ namespace ProdMonitor.Application.Services
                 _logger.Information("Successfully created a new detail order with ID {OrderId} for user {UserId}", newOrder.Id, order.UserId);
                 return newOrder;
             }
+            catch (DetailNotFoundException)
+            {
+                throw;
+            }
+            catch (ArgumentException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 _logger.Error(ex, "Detail order creation failed for user {UserId}", order.UserId);
@@ -70,6 +78,11 @@ namespace ProdMonitor.Application.Services
             try
             {
                 var orders = await _orderRepository.GetAllDetailOrdersAsync(filter);
+                if (!orders.Any())
+                {
+                    _logger.Warning("No detail orders found");
+                    throw new DetailOrderNotFoundException("No detail orders found");
+                }
                 _logger.Information("Successfully retrieved {OrderCount} detail orders", orders.Count);
                 return orders;
             }
@@ -94,6 +107,10 @@ namespace ProdMonitor.Application.Services
 
                 _logger.Information("Successfully retrieved detail order with ID {OrderId}", id);
                 return order;
+            }
+            catch (DetailOrderNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

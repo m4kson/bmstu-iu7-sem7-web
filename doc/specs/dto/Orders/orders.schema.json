@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Результат поиска заказов по фильтрам.",
+    "required": [
+      "items",
+      "count"
+    ],
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "order.schema.json"
+        },
+        "description": "Заказы, найденные по фильтрам."
+      },
+      "count": {
+        "type": "integer",
+        "description": "Количество заказов, найденных по фильтрам."
+      }
+    }
+}

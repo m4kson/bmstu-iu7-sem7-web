@@ -10,6 +10,7 @@ namespace ProdMonitor.Application.Services
     {
         private readonly IDetailRepository _detailRepository;
         private readonly ILogger _logger;
+        private IDetailService _detailServiceImplementation;
 
         public DetailService(IDetailRepository detailRepository,
             ILogger logger)
@@ -41,8 +42,18 @@ namespace ProdMonitor.Application.Services
             try
             {
                 var details = await _detailRepository.GetAllDetailsAsync(filter);
+                if (!details.Any())
+                {
+                    _logger.Warning("No details found");
+                    throw new DetailNotFoundException("No details found");
+                }
+
                 _logger.Information("Successfully retrieved {DetailCount} details", details.Count);
                 return details;
+            }
+            catch (DetailNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -66,10 +77,32 @@ namespace ProdMonitor.Application.Services
                 _logger.Information("Successfully retrieved detail with ID {DetailId}", id);
                 return detail;
             }
+            catch (DetailNotFoundException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 _logger.Error(ex, "Failed to retrieve detail with ID {DetailId}", id);
                 throw new DetailServiceException("Failed to get detail", ex);
+            }
+        }
+
+        public Task DeleteDetailAsync(Guid id)
+        {
+            _logger.Information("Attempting to delete detail with ID {DetailId}", id);
+            try
+            {
+                return _detailRepository.DeleteDetailAsync(id);
+            }
+            catch (DetailNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to delete detail with ID {DetailId}", id);
+                throw new DetailServiceException("Failed to delete detail", ex);
             }
         }
     }

@@ -24,6 +24,14 @@ namespace ProdMonitor.DataAccess.Repositories
         {
             try
             {
+                // check if detail with Id exists
+                var detail = await _context.Details
+                    .FirstOrDefaultAsync(d => d.Id == orderDetail.DetailId);
+                if (detail == null)
+                {
+                    throw new OrderDetailRepositoryException("Detail with Id not found");
+                }
+                
                 var orderDetailDb = new OrderDetailDb(id: Guid.NewGuid(),
                     detailId: orderDetail.DetailId,
                     detailOrderId: orderDetail.DetailOrderId,

@@ -57,8 +57,8 @@ namespace ProdMonitor.DataAccess.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("DefectRate")
-                        .HasColumnType("integer");
+                    b.Property<float>("DefectRate")
+                        .HasColumnType("real");
 
                     b.Property<int>("DownTime")
                         .HasColumnType("integer");
@@ -81,9 +81,6 @@ namespace ProdMonitor.DataAccess.Migrations
 
                     b.Property<DateOnly>("NextInspection")
                         .HasColumnType("date");
-
-                    b.Property<int>("Production")
-                        .HasColumnType("integer");
 
                     b.Property<int>("Status")
                         .HasColumnType("integer");

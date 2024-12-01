@@ -1,0 +1,47 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель для создания пользователя.",
+    "required": [
+        
+    ],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Имя пользователя."
+        },
+        "surname": {
+            "type": "string",
+            "description": "Фамилия пользователя."
+        },
+        "fathername": {
+            "type": "string",
+            "description": "Отчество пользователя."
+        },
+        "department": {
+            "type": "string",
+            "description": "Отдел, в котором работает пользователь."
+        },
+        "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Электронная почта пользователя."
+        },
+        "password": {
+            "type": "string",
+            "description": "Пароль пользователя."
+        },
+        "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "description": "Дата рождения пользователя."
+        },
+        "sex": {
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female"
+            ],
+            "description": "Пол пользователя."
+        }
+    }
+}

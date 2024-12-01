@@ -9,5 +9,7 @@ namespace ProdMonitor.Domain.Interfaces.Services
         Task<List<Detail>> GetAllDetailsAsync(DetailFilter filter);
 
         Task<Detail> GetDetailByIdAsync(Guid id);
+        
+        Task DeleteDetailAsync(Guid id);
     }
 }

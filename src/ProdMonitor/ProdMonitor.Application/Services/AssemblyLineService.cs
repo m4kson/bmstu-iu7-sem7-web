@@ -38,7 +38,18 @@ namespace ProdMonitor.Application.Services
             try
             {
                 _logger.Information("Getting all assembly lines with filter: {Filter}", filter);
-                return await _assemblyLineRepository.GetAllAssemblyLinesAsync(filter);
+                var result = await _assemblyLineRepository.GetAllAssemblyLinesAsync(filter);
+                if (!result.Any())
+                {
+                    _logger.Warning("No assembly lines found with filter: {Filter}", filter);
+                    throw new LineNotFoundException("No lines found");
+                }
+
+                return result;
+            }
+            catch (LineNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -58,12 +69,35 @@ namespace ProdMonitor.Application.Services
                     _logger.Warning("Assembly line with id {Id} not found", id);
                     throw new LineNotFoundException($"Line with id {id} not found");
                 }
+
                 return assemblyLine;
+            }
+            catch (LineNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
                 _logger.Error(ex, "Failed to get assembly line with id: {Id}", id);
                 throw new AssemblyLineServiceException("Failed to get line", ex);
+            }
+        }
+
+        public Task DeleteAssemblyLineAsync(Guid id)
+        {
+            try
+            {
+                _logger.Information("Deleting assembly line with id: {Id}", id);
+                return _assemblyLineRepository.DeleteAssemblyLineAsync(id);
+            }
+            catch (LineNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to delete assembly line with id: {Id}", id);
+                throw new AssemblyLineServiceException("Failed to delete line", ex);
             }
         }
     }

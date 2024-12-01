@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель для создания заявки на обслуживание.",
+    "required": [
+        "lineId",
+        "type",
+        "description"
+    ],
+    "properties": {
+        "lineId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор линии."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "Inspection",
+                "Repair"
+            ],
+            "description": "Тип заявки на обслуживание."
+        },
+        "description": {
+            "type": "string",
+            "description": "Описание заявки на обслуживание."
+        }
+    }
+}

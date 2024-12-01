@@ -11,5 +11,7 @@ namespace ProdMonitor.Domain.Interfaces.Repositories
         Task<Detail?> GetDetailByIdAsync(Guid id);
 
         Task UpdateDetailAsync(Guid id, int amaunt);
+        
+        Task DeleteDetailAsync(Guid id);
     }
 }

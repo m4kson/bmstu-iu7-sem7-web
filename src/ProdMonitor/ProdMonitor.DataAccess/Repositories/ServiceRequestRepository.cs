@@ -28,6 +28,17 @@ namespace ProdMonitor.DataAccess.Repositories
         {
             try
             {
+                if (lineId == Guid.Empty)
+                {
+                    throw new ArgumentException("LineId is required.");
+                }
+                
+                if (userId == Guid.Empty)
+                {
+                    throw new ArgumentException("UserId is required.");
+                }
+                
+                
                 var serviceRequest = new ServiceRequest(
                     id: Guid.NewGuid(),
                     lineId: lineId,

@@ -69,6 +69,41 @@ namespace ProdMonitor.DataAccess.Repositories
             }
         }
 
+        public async Task<User> UpdateUserAsync(Guid userId, UserCreate userData)
+        {
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(u => u.Id == userId);
+                if (user == null)
+                {
+                    throw new UserNotFoundException($"User with ID {userId} not found");
+                }
+
+                user.Name = userData.Name;
+                user.Surname = userData.Surname;
+                user.Patronymic = userData.Patronymic;
+                user.Department = userData.Department;
+                user.Email = userData.Email;
+                user.PasswordHash = userData.PasswordHash;
+                user.PasswordSalt = userData.PasswordSalt;
+                user.BirthDay = userData.BirthDay;
+                user.Sex = SexTypeConverter.ToDb(userData.Sex);
+                user.Role = RoleTypeConverter.ToDb(userData.Role);
+
+                await _context.SaveChangesAsync();
+                return UserConverter.ToDomain(user)!;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new UserRepositoryException("Failed to retrieve users", ex);
+            }
+        }
+
         public async Task<List<User>> GetAllUsersAsync(UserFilter filter)
         {
             try
@@ -156,6 +191,10 @@ namespace ProdMonitor.DataAccess.Repositories
                 await _context.SaveChangesAsync();
 
                 return UserConverter.ToDomain(userDb)!;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

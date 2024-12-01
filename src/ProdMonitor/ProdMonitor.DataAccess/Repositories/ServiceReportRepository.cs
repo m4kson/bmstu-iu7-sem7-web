@@ -27,7 +27,7 @@ namespace ProdMonitor.DataAccess.Repositories
 
                 if (serviceReportDb == null)
                 {
-                    throw new ServiceReportRepositoryException($"Service report with ID {id} not found.");
+                    throw new ReportNotFoundException($"Service report with ID {id} not found.");
                 }
 
                 serviceReportDb.CloseDate = closeDate;
@@ -37,6 +37,10 @@ namespace ProdMonitor.DataAccess.Repositories
                 await _context.SaveChangesAsync();
 
                 return ServiceReportConverter.ToDomain(serviceReportDb)!;
+            }
+            catch (ReportNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -63,9 +67,9 @@ namespace ProdMonitor.DataAccess.Repositories
                 await _context.SaveChangesAsync();
 
                 var createdReport = await _context.ServiceReports
-                    .Include(s => s.ServiceRequest)
-                    .Include(s => s.User)
-                    .Include(s => s.AssemblyLine)
+                    // .Include(s => s.ServiceRequest)
+                    // .Include(s => s.User)
+                    // .Include(s => s.AssemblyLine)
                     .FirstOrDefaultAsync(sr => sr.Id == result.Entity.Id);
 
                 if (createdReport == null)

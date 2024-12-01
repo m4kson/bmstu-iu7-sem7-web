@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель трактора.",
+    "required": [
+        "id",
+        "model",
+        "releaseYear",
+        "engineType",
+        "enginePower",
+        "frontTireSize",
+        "backTireSize",
+        "wheelsAmount",
+        "tankCapacity",
+        "ecologicalStandart",
+        "length",
+        "width",
+        "cabinHeight"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Внутренний идентификатор трактора."
+        },
+        "model": {
+            "type": "string",
+            "description": "Название модели трактора."
+        },
+        "releaseYear": {
+            "type": "integer",
+            "description": "Год выпуска модели."
+        },
+        "engineType": {
+            "type": "string",
+            "description": "Тип двигателя."
+        },
+        "enginePower": {
+            "type": "integer",
+            "description": "Мощьность двигателя в л.с."
+        },
+        "frontTireSize": {
+            "type": "integer",
+            "description": "Диаметр передних колес в см."
+        },
+        "backTireSize": {
+            "type": "integer",
+            "description": "Диаметр задних колес в см."
+        },
+        "wheelsAmount": {
+            "type": "integer",
+            "description": "Количество колес."
+        },
+        "tankCapacity": {
+            "type": "integer",
+            "description": "Объем двигателя в литрах."
+        }, 
+        "ecologicalStandart": {
+            "type": "string",
+            "description": "Экологический стандарт."
+        },
+        "length": {
+            "type": "number",
+            "description": "Длина трактора в метрах."
+        },
+        "width": {
+            "type": "number",
+            "description": "Ширина трактора в метрах."
+        },
+        "cabinHeight": {
+            "type": "number",
+            "description": "Высота трактора по кабине в метрах."
+        }
+    }
+}

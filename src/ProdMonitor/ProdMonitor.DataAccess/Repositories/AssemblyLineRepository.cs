@@ -25,19 +25,18 @@ namespace ProdMonitor.DataAccess.Repositories
             try
             {
                 var assemblyLine = new AssemblyLine(id: Guid.NewGuid(),
-                name: line.Name,
-                length: line.Length,
-                height: line.Height,
-                width: line.Width,
-                status: line.Status,
-                production: line.Production,
-                downTime: line.DownTime,
-                inspectionsPerYear: line.InspectionsPerYear,
-                lastInspection: line.LastInspection,
-                nextInspection: line.NextInspection,
-                defectRate: line.DefectRate,
-                tractors: line.Tractors,
-                details: line.Details);
+                    name: line.Name,
+                    length: line.Length,
+                    height: line.Height,
+                    width: line.Width,
+                    status: line.Status,
+                    downTime: line.DownTime,
+                    inspectionsPerYear: line.InspectionsPerYear,
+                    lastInspection: line.LastInspection,
+                    nextInspection: line.NextInspection,
+                    defectRate: line.DefectRate,
+                    tractors: line.Tractors,
+                    details: line.Details);
 
                 var assemblyLineDb = AssemblyLineConverter.ToDb(assemblyLine);
 
@@ -76,7 +75,7 @@ namespace ProdMonitor.DataAccess.Repositories
                 .Take(filter.Limit)
                 .AsNoTracking()
                 .ToListAsync();
-            
+
             var result = assemblyLines.ConvertAll(l => AssemblyLineConverter.ToDomain(l)!);
             return result;
         }
@@ -94,7 +93,7 @@ namespace ProdMonitor.DataAccess.Repositories
             try
             {
                 var assemblyLine = await _context.AssemblyLines
-                .FirstOrDefaultAsync(l => l.Id == id);
+                    .FirstOrDefaultAsync(l => l.Id == id);
 
                 if (assemblyLine == null)
                 {
@@ -109,11 +108,6 @@ namespace ProdMonitor.DataAccess.Repositories
                 if (assemblyLineUpdate.Status.HasValue)
                 {
                     assemblyLine.Status = LineStatusTypeConverter.ToDb(assemblyLineUpdate.Status.Value);
-                }
-
-                if (assemblyLineUpdate.Production.HasValue)
-                {
-                    assemblyLine.Production = assemblyLineUpdate.Production.Value;
                 }
 
                 if (assemblyLineUpdate.DownTime.HasValue)
@@ -149,6 +143,31 @@ namespace ProdMonitor.DataAccess.Repositories
             catch (Exception ex)
             {
                 throw new AssemblyLineRepositoryException("Failed to update AssemblyLine", ex);
+            }
+        }
+
+        public Task DeleteAssemblyLineAsync(Guid id)
+        {
+            try
+            {
+                var assemblyLine = _context.AssemblyLines
+                    .FirstOrDefault(l => l.Id == id);
+
+                if (assemblyLine == null)
+                {
+                    throw new LineNotFoundException("Line not found.");
+                }
+
+                _context.AssemblyLines.Remove(assemblyLine);
+                return _context.SaveChangesAsync();
+            }
+            catch (LineNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new AssemblyLineRepositoryException("Failed to delete AssemblyLine", ex);
             }
         }
     }

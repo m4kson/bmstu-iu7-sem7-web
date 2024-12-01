@@ -113,6 +113,30 @@ namespace ProdMonitor.DataAccess.Repositories
             }
             
         }
+
+        public Task DeleteDetailAsync(Guid id)
+        {
+            try
+            {
+                var detail = _context.Details
+                    .FirstOrDefault(d => d.Id == id);
+                if (detail == null)
+                {
+                    throw new DetailNotFoundException("Detail not found.");
+                }
+
+                _context.Details.Remove(detail);
+                return _context.SaveChangesAsync();
+            }
+            catch (DetailNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new DetailRepositoryException("Failed to delete detail", ex);
+            }
+        }
     }
 }
 

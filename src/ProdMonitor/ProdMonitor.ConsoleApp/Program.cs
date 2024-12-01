@@ -59,6 +59,7 @@ namespace ProdMonitor.ConsoleApp
                         services.AddTransient<IServiceRequestRepository, ServiceRequestRepository>();
                         services.AddTransient<ITractorRepository, TractorRepository>();
                         services.AddTransient<IUserRepository, UserRepository>();
+                        services.AddTransient<IOrderDetailRepository, OrderDetailRepository>(); // Add this line
 
                         services.AddSingleton(Log.Logger);
 

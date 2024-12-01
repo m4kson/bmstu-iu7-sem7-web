@@ -48,6 +48,7 @@ namespace ProdMonitor.DataAccess.Repositories
                         );
                         var createdOrderDetail = await _context.OrderDetails.AddAsync(OrderDetailConverter.ToDb(orderDetail)!);
                         detailOrder.OrderDetails.Add(orderDetail);
+                        //var createdOrderDetail = await _orderRepository.CreateOrderDetail(orderDetail);
                     }
                 }
 

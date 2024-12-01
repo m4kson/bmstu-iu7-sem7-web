@@ -1,0 +1,42 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель заказа.",
+    "required": [
+        "id",
+        "userId",
+        "status",
+        "totoalPrice",
+        "orderDate"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор заказа."
+        },
+        "userId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Идентификатор пользователя, сделавшего заказ."
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "Proccessing",
+                "InWork",
+                "InDelivery",
+                "Done"
+            ],
+            "description": "Статус заказа."
+        },
+        "totoalPrice": {
+            "type": "float",
+            "description": "Общая стоимость заказа в рублях."
+        },
+        "orderDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата и время создания заказа."
+        }
+    }
+}

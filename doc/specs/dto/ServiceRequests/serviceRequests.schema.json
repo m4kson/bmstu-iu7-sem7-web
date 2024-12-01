@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Результат поиска заявок на обслуживание по фильтрам.",
+    "required": [
+      "items",
+      "count"
+    ],
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "serviceRequest.schema.json"
+        },
+        "description": "Заявки на обслуживание, найденные по фильтрам."
+      },
+      "count": {
+        "type": "integer",
+        "description": "Количество заявок на обслуживание, найденных по фильтрам."
+      }
+    }
+}

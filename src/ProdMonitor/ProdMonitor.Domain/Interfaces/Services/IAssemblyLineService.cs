@@ -9,5 +9,7 @@ namespace ProdMonitor.Domain.Interfaces.Services
         Task<List<AssemblyLine>> GetAllAssemblyLinesAsync(AssemblyLineFilter filter);
 
         Task<AssemblyLine> GetAssemblyLineByIdAsync(Guid id);
+        
+        Task DeleteAssemblyLineAsync(Guid id);
     }
 }

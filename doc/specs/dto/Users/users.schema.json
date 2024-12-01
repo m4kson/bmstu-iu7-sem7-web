@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Результат поиска пользователей по фильтрам.",
+    "required": [
+      "items",
+      "count"
+    ],
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "user.schema.json"
+        },
+        "description": "Пользователи, найденные по фильтрам."
+      },
+      "count": {
+        "type": "integer",
+        "description": "Количество пользователей, найденных по фильтрам."
+      }
+    }
+}

@@ -41,8 +41,17 @@ namespace ProdMonitor.Application.Services
             try
             {
                 var tractors = await _tractorRepository.GetAllTractorsAsync(filter);
+                if (!tractors.Any())
+                {
+                    _logger.Warning("No tractors found with the specified filter");
+                    throw new TractorNotFoundException("No tractors found with the specified filter");
+                }
                 _logger.Information("Successfully retrieved {TractorCount} tractors", tractors.Count);
                 return tractors;
+            }
+            catch (TractorNotFoundException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -65,10 +74,32 @@ namespace ProdMonitor.Application.Services
                 _logger.Information("Successfully retrieved tractor with ID {TractorId}", id);
                 return tractor;
             }
+            catch (TractorNotFoundException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 _logger.Error(ex, "Failed to retrieve tractor with ID {TractorId}", id);
                 throw new TractorServiceException("Failed to get tractor", ex);
+            }
+        }
+
+        public async Task DeleteTractorAsync(Guid id)
+        {
+            try
+            {
+                _logger.Information("Attempting to delete tractor with ID {TractorId}", id);
+                await _tractorRepository.DeleteTractorAsync(id);
+            }
+            catch (TractorNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to delete tractor with ID {TractorId}", id);
+                throw new TractorServiceException("Failed to delete tractor", ex);
             }
         }
     }

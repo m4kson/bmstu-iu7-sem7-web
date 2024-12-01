@@ -15,5 +15,7 @@ namespace ProdMonitor.Domain.Interfaces.Repositories
         Task<User> UpdateUserRoleAsync(Guid userId, UserUpdateRole role);
 
         Task DeleteUserAsync(Guid userId);
+        
+        Task<User> UpdateUserAsync(Guid userId, UserCreate userData);
     }
 }

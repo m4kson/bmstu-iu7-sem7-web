@@ -10,7 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Allure.Net.Commons" Version="2.12.1" />
+    <PackageReference Include="Allure.SpecFlow" Version="2.12.1" />
+    <PackageReference Include="Allure.Xunit" Version="2.12.1" />
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0-rc.1.24451.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="OpenCover" Version="4.7.1221" />
@@ -18,12 +22,14 @@
     <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.2" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="SpecFlow.Allure" Version="3.5.0.73" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProdMonitor.Application\ProdMonitor.Application.csproj" />
+    <ProjectReference Include="..\ProdMonitor.DataAccess\ProdMonitor.DataAccess.csproj" />
     <ProjectReference Include="..\ProdMonitor.Domain\ProdMonitor.Domain.csproj" />
   </ItemGroup>
 

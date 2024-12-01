@@ -41,8 +41,17 @@ namespace ProdMonitor.Application.Services
                     _logger.Warning("Login failed: Incorrect password for email {Email}", authModel.Email);
                     throw new WrongPasswordException("Wrong password");
                 }
+
                 _logger.Information("User {Email} successfully logged in", authModel.Email);
                 return user;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (WrongPasswordException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -58,9 +67,13 @@ namespace ProdMonitor.Application.Services
                 _logger.Information("Attempt to register new user with email: {Email}", authModel.Email);
                 if (authModel.Password.Length < _authenticationServiceConfiguration.MinPasswordLength)
                 {
-                    _logger.Error("Registration failed: Please ensure your password are longer than {MinPasswordLength}", _authenticationServiceConfiguration.MinPasswordLength);
-                    throw new ArgumentException($"Please ensure your password are longer than {_authenticationServiceConfiguration.MinPasswordLength}");
+                    _logger.Error(
+                        "Registration failed: Please ensure your password are longer than {MinPasswordLength}",
+                        _authenticationServiceConfiguration.MinPasswordLength);
+                    throw new ArgumentException(
+                        $"Please ensure your password are longer than {_authenticationServiceConfiguration.MinPasswordLength}");
                 }
+
                 var existingUser = await _userRepository.GetUserByEmailAsync(authModel.Email);
                 if (existingUser != null)
                 {
@@ -86,6 +99,14 @@ namespace ProdMonitor.Application.Services
                 var createdUser = await _userRepository.CreateUserAsync(newUser);
                 _logger.Information("User with email {Email} successfully registered", authModel.Email);
                 return createdUser;
+            }
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (UserAlreadyExistException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

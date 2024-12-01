@@ -1,0 +1,1302 @@
+openapi: 3.0.3
+
+info:
+  version: 1.0.0
+  title: API системы мониторинга на тракторном заводе.
+
+tags:
+  - name: ProdMonitor
+    description: Мониторинг производства.
+
+paths:
+  /api/v1/auth/login:
+    post:
+      tags:
+        - Auth
+      operationId: login
+      summary: Метод для авторизации пользователя.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Login"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Пользователь не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/auth/register:
+    post:
+      tags:
+        - Auth
+      operationId: register
+      summary: Метод для регистрации пользователя.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Register"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/auth/logout:
+    post:
+      tags:
+        - Auth
+      operationId: logout
+      summary: Метод для выхода пользователя из системы.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/tractors:
+    post:
+      tags:
+        - Tractor
+      operationId: addTractor
+      summary: Метод для добавления трактора.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TractorCreate"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tractor"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+
+    get:
+      tags:
+        - Tractor
+      operationId: getTractors
+      summary: Метод для получения списка тракторов.
+      parameters:
+        - in: query
+          name: releaseYear
+          schema:
+            type: string
+            format: date
+          description: Год выпуска трактора.
+        
+        - in: query
+          name: engineType
+          schema:
+            type: string
+          description: Тип двигателя трактора.
+
+        - in: query
+          name: ecologyStandard
+          schema:
+            type: string
+          description: Экологический стандарт трактора.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество тракторов, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество тракторов, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tractor"
+        
+        "404":
+          description: Тракторы не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/tractors/{tractorId}:
+    get:
+      tags:
+        - Tractor
+      operationId: getTractor
+      summary: Метод для получения информации о тракторе.
+      parameters:
+        - in: path
+          name: tractorId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор трактора.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tractor"
+        "404":
+          description: Трактор не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      
+    delete:
+        tags: 
+          - Tractor
+        operationId: deleteTractor
+        summary: Метод для удаления трактора.
+        parameters:
+          - in: path
+            name: tractorId
+            schema: 
+              type: string
+              format: uuid
+            required: true
+            description: Идентификатор трактора.
+
+        responses:
+          "200":
+            description: Запрос выполнен успешно.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Tractor"
+
+          "400":
+            description: Bad request.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+          "401":
+            description: Пользователь не авторизован.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+            
+          "403":
+            description: Пользователь не имеет прав для удаления трактора.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+          "404":
+            description: Трактор не найден.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+          
+          "500":
+            description: Внутренняя ошибка сервера.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+            
+
+
+  /api/v1/details:
+    post:
+      tags:
+        - Detail
+      operationId: addDetail
+      summary: Метод для добавления детали.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DetailCreate"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Detail"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    get:
+      tags:
+        - Detail
+      operationId: getDetails
+      summary: Метод для получения списка деталей.
+      parameters:
+        - in: query
+          name: country
+          schema:
+            type: string
+          description: Страна производства детали.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество деталей, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество деталей, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Detail"
+        
+        "404":
+          description: Детали не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+
+  /api/v1/details/{detailId}:
+    get:
+      tags:
+        - Detail
+      operationId: getDetail
+      summary: Метод для получения информации о детали.
+      parameters:
+        - in: path
+          name: detailId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор детали.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Detail"
+        "404":
+          description: Деталь не найдена.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    delete:
+        tags: 
+          - Detail
+        operationId: deleteDetail
+        summary: Метод для удаления детали.
+        parameters:
+          - in: path
+            name: detailId
+            schema: 
+              type: string
+              format: uuid
+            required: true
+            description: Идентификатор детали.
+
+        responses:
+          "200":
+            description: Запрос выполнен успешно.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Detail"
+
+          "400":
+            description: Bad request.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+          "401":
+            description: Пользователь не авторизован.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+            
+          "403":
+            description: Пользователь не имеет прав для удаления трактора.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+          "404":
+            description: Деталь не найден.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+          
+          "500":
+            description: Внутренняя ошибка сервера.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+  /api/v1/assemblyLines:
+    post:
+      tags:
+        - AssemblyLine
+      operationId: addAssemblyLine
+      summary: Метод для добавления производственной линии.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AssemblyLineCreate"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AssemblyLine"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    get:
+      tags:
+        - AssemblyLine
+      operationId: getAssemblyLines
+      summary: Метод для получения списка линий сборки.
+      parameters:
+        - in: query
+          name: status
+          schema:
+            type: string
+          description: Страна производственной линии.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество линий, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество линий, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AssemblyLine"
+        
+        "404":
+          description: Линии сборки не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/assemblyLines/{assemblyLineId}:
+    get:
+      tags:
+        - AssemblyLine
+      operationId: getAssemblyLine
+      summary: Метод для получения информации о линии.
+      parameters:
+        - in: path
+          name: assemblyLineId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор линии сборки.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AssemblyLine"
+        "404":
+          description: Линия сборки не найдена.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"    
+
+    delete:
+        tags: 
+          - AssemblyLine
+        operationId: deleteAssemblyLine
+        summary: Метод для удаления линии.
+        parameters:
+          - in: path
+            name: lineId
+            schema: 
+              type: string
+              format: uuid
+            required: true
+            description: Идентификатор линии.
+
+        responses:
+          "200":
+            description: Запрос выполнен успешно.
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/AssemblyLine"
+
+          "400":
+            description: Bad request.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+          "401":
+            description: Пользователь не авторизован.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+            
+          "403":
+            description: Пользователь не имеет прав для удаления трактора.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+          "404":
+            description: Линия не найдена.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+          
+          "500":
+            description: Внутренняя ошибка сервера.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"    
+
+  /api/v1/requests:
+    post:
+      tags:
+        - Request
+      operationId: addRequest
+      summary: Метод для добавления запроса.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RequestCreate"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Request"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    get:
+      tags:
+        - Request
+      operationId: getRequests
+      summary: Метод для получения списка запросов.
+      parameters:
+        - in: query
+          name: lineId
+          schema:
+            type: string
+            format: uuid
+          description: Идентификатор линии сборки.
+
+        - in: query
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          description: Идентификатор пользователя.
+
+        - in: query
+          name: requestType
+          schema:
+            type: string
+          description: Тип запроса.
+
+        - in: query
+          name: status
+          schema:
+            type: string
+          description: Статус запроса.
+
+        - in: query
+          name: sortByDate
+          schema:
+            type: boolean
+          description: Сортировка по дате.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество запросов, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество запросов, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Request"
+        
+        "404":
+          description: Запросы не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/v1/requests/{requestId}:
+    get:
+      tags:
+        - Request
+      operationId: getRequest
+      summary: Метод для получения информации о запросе.
+      parameters:
+        - in: path
+          name: requestId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор запроса.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Request"
+        "404":
+          description: Запрос не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/reports:
+    post:
+      tags:
+        - Report
+      operationId: addReport
+      summary: Метод для добавления отчета.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReportCreate"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+                
+    get:
+      tags:
+        - Report
+      operationId: getReports
+      summary: Метод для получения списка отчетов.
+      parameters:
+        - in: query
+          name: lineId
+          schema:
+            type: string
+            format: uuid
+          description: Идентификатор производственной линии.
+
+        - in: query
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          description: Идентификатор пользователя.
+
+        - in: query
+          name: type
+          schema:
+            type: string
+          description: Тип отчета.
+
+        - in: query
+          name: status
+          schema:
+            type: string
+          description: Статус отчета.
+
+        - in: query
+          name: sortByDate
+          schema:
+            type: boolean
+          description: Сортировка по дате.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество отчетов, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество отчетов, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Report"
+        
+        "404":
+          description: Отчеты не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+
+  /api/v1/reports/{reportId}:
+    get:
+      tags:
+        - Report
+      operationId: getReport
+      summary: Метод для получения информации об отчете.
+      parameters:
+        - in: path
+          name: reportId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор отчета.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "404":
+          description: Отчет не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    patch:
+      tags:
+        - Report
+      operationId: closeReport
+      summary: Метод для закрытия отчета.
+      parameters:
+        - in: path
+          name: reportId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор отчета.
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReportClose"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+
+  /api/v1/users:
+    get:
+      tags:
+        - User
+      operationId: getUsers
+      summary: Метод для получения списка пользователей.
+      parameters:
+        - in: query
+          name: department
+          schema:
+            type: string
+          description: Отдел пользователя.
+
+        - in: query
+          name: birthdayDate
+          schema:
+            type: string
+            format: date
+          description: Дата рождения пользователя.
+
+        - in: query
+          name: sex
+          schema:
+            type: string
+          description: Пол пользователя.
+
+        - in: query
+          name: role
+          schema:
+            type: string
+          description: Роль пользователя.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество пользователей, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество пользователей, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        
+        "404":
+          description: Пользователи не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/users/{userId}:
+    get:
+      tags:
+        - User
+      operationId: getUser
+      summary: Метод для получения информации о пользователе.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор пользователя.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: Пользователь не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    put:
+      tags:
+        - User
+      operationId: updateUser
+      summary: Метод для редактирования информации о пользователе.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор пользователя.
+      
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserUpdate"
+      
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+        "400":
+            description: Bad request.
+            content:
+              application/problem+json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+
+        "401":
+          description: Пользователь не авторизован.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          
+        "403":
+          description: Пользователь не имеет прав для этого действия.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "404":
+          description: Пользователь не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  
+  /api/v1/users/{userId}/role:
+    patch:
+      tags:
+        - User
+      operationId: changeUserRole
+      summary: Метод для изменения роли пользователя.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор пользователя.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              enum: [admin, user]
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+
+  /api/v1/orders:
+    post:
+      tags:
+        - Order
+      operationId: addOrder
+      summary: Метод для добавления заказа.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OrderCreate"
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        "400":
+          description: Ошибка в данных запроса.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    get:
+      tags:
+        - Order
+      operationId: getOrders
+      summary: Метод для получения списка заказов.
+      parameters:
+        - in: query
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          description: Идентификатор пользователя.
+
+        - in: query
+          name: status
+          schema:
+            type: string
+          description: Статус заказа.
+
+        - in: query
+          name: skip
+          schema:
+            type: integer
+          description: Количество заказов, которое нужно пропустить.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Максимальное количество заказов, которое нужно получить.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Order"
+        
+        "404":
+          description: Заказы не найдены.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/v1/orders/{orderId}:
+    get:
+      tags:
+        - Order
+      operationId: getOrder
+      summary: Метод для получения информации о заказе.
+      parameters:
+        - in: path
+          name: orderId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Идентификатор заказа.
+      responses:
+        "200":
+          description: Запрос выполнен успешно.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        "404":
+          description: Заказ не найден.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Внутренняя ошибка сервера.
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Login:
+      $ref: "../dto/Auth/login.schema.json"
+    Error:
+      $ref: "../dto/Error/error.schema.json"
+    User:
+      $ref: "../dto/Users/user.schema.json"
+    Register:
+      $ref: "../dto/Users/user-create.schema.json"
+    TractorCreate:
+      $ref: "../dto/Tractors/tractor-create.schema.json"
+    Tractor:
+      $ref: "../dto/Tractors/tractor.schema.json"
+    DetailCreate:
+      $ref: "../dto/Details/detail-create.schema.json"
+    Detail:
+      $ref: "../dto/Details/detail.schema.json"
+    AssemblyLineCreate:
+      $ref: "../dto/AssemblyLines/assemblyLine-create.schema.json"
+    AssemblyLine:
+      $ref: "../dto/AssemblyLines/assemblyLine.schema.json"
+    RequestCreate:
+      $ref: "../dto/ServiceRequests/serviceRequest-create.schema.json"
+    Request:
+      $ref: "../dto/ServiceRequests/serviceRequest.schema.json"
+    ReportCreate:
+      $ref: "../dto/ServiceReports/serviceReport-create.schema.json"
+    Report:
+      $ref: "../dto/ServiceReports/serviceReport.schema.json"
+    ReportClose:
+      $ref: "../dto/ServiceReports/serviceReport-close.schema.json"
+    UserCreate:
+      $ref: "../dto/Users/user-create.schema.json"
+    UserUpdate:
+      $ref: "../dto/Users/user-update.schema.json"
+    OrderCreate:
+      $ref: "../dto/Orders/order-create.schema.json"
+    Order:
+      $ref: "../dto/Orders/order.schema.json"
+    

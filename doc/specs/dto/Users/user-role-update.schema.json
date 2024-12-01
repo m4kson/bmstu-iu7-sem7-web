@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Модель для обновления роли пользователя.",
+    "required": [
+        "role"
+    ],
+    "properties": {
+        "role": {
+            "type": "string",
+            "enum": [
+                "Admin",
+                "Operator",
+                "Specialist",
+                "Verification"
+            ],
+            "description": "Роль пользователя."
+        }
+    }
+}

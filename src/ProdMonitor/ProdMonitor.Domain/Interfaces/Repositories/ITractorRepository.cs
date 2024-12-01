@@ -9,5 +9,7 @@ namespace ProdMonitor.Domain.Interfaces.Repositories
         Task<List<Tractor>> GetAllTractorsAsync(TractorFilter filter);
 
         Task<Tractor?> GetTractorByIdAsync(Guid id);
+        
+        Task DeleteTractorAsync(Guid id);
     }
 }

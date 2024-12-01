@@ -1,0 +1,46 @@
+version: '3.8'
+
+networks:
+  default:
+    name: 'prodmonitor-network'
+
+volumes:
+  postgres_data:
+  pm-logs:
+  pgadmin_data:
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: m4ks0n
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: ProdMonitor
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    environment:
+      ConnectionStrings__DefaultConnection: "User ID=m4ks0n;Password=admin;Server=db;Port=5432;Database=ProdMonitor"
+      
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true  
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: limos.00@mail.ru
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - db
+    networks:
+      - default
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin

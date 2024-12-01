@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "description": "Результат поиска отчетов по фильтрам.",
+    "required": [
+      "items",
+      "count"
+    ],
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "serviceReport.schema.json"
+        },
+        "description": "Отчеты, найденные по фильтрам."
+      },
+      "count": {
+        "type": "integer",
+        "description": "Количество отчетов, найденных по фильтрам."
+      }
+    }
+}
