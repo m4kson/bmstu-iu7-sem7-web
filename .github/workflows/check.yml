@@ -16,7 +16,7 @@ jobs:
       image: mcr.microsoft.com/dotnet/sdk:8.0
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up .NET environment
         run: dotnet --version
