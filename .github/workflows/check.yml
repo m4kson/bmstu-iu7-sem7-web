@@ -76,7 +76,7 @@ jobs:
 
       - name: Run Integration Tests
         run: |
-          chmod +x ./scripts/ci/Test/run_integration_tests.sh
+          chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTest/ProdMonitor.IntegrationTest.csproj
           
         
