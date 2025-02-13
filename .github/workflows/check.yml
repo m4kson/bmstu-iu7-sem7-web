@@ -67,16 +67,16 @@ jobs:
       postgres:
         image: postgres:15-alpine
         env:
-          POSTGRES_USER: testuser
-          POSTGRES_PASSWORD: testpassword
-          POSTGRES_DB: testdb
+          POSTGRES_USER: m4ks0n
+          POSTGRES_PASSWORD: admin
+          POSTGRES_DB: ProdMonitor
         ports:
           - 5432:5432
-        options: >-
-          --health-cmd="pg_isready -U testuser"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
+        # options: >-
+        #   --health-cmd="pg_isready -U testuser"
+        #   --health-interval=10s
+        #   --health-timeout=5s
+        #   --health-retries=5
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -92,12 +92,10 @@ jobs:
             # Передаем переменные окружения, чтобы тесты могли подключаться к сервисам
             POSTGRES_HOST: localhost
             POSTGRES_PORT: 5432
-            POSTGRES_USER: testuser
-            POSTGRES_PASSWORD: testpassword
-            POSTGRES_DB: testdb
+            POSTGRES_USER: m4ks0n
+            POSTGRES_PASSWORD: admin
+            POSTGRES_DB: ProdMonitor
         run: |
-          pg_isready -h localhost -p 5432 -U testuser
-          docker logs $(docker ps -q --filter ancestor=postgres:15-alpine)
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj --logger:"console;verbosity=detailed"
 
