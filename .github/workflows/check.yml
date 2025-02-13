@@ -59,78 +59,25 @@ jobs:
   integration-tests:
     name: Integration Tests
     runs-on: ubuntu-latest
-    needs:
-      - build
-      - unit-tests
-
-    services:
-      postgres:
-        image: postgres:15-alpine
-        env:
-          POSTGRES_USER: m4ks0n
-          POSTGRES_PASSWORD: admin
-          POSTGRES_DB: ProdMonitor
-        ports:
-          - 5432:5432
-        # options: >-
-        #   --health-cmd="pg_isready -U testuser"
-        #   --health-interval=10s
-        #   --health-timeout=5s
-        #   --health-retries=5
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Check Docker Availability
-        run: docker run hello-world
-
-      - name: Set up Test Environment
-        run: dotnet --info
-
-      - name: Run Integration Tests
-        env:
-            # Передаем переменные окружения, чтобы тесты могли подключаться к сервисам
-            POSTGRES_HOST: localhost
-            POSTGRES_PORT: 5432
-            POSTGRES_USER: m4ks0n
-            POSTGRES_PASSWORD: admin
-            POSTGRES_DB: ProdMonitor
-        run: |
-          chmod +x ./scripts/ci/Test/run_tests.sh
-          ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj --logger:"console;verbosity=detailed"
-
-
-
-  end-to-end-tests:
-    name: End-to-End Tests
-    runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/dotnet/sdk:8.0
-    needs:
-      - build
-      - unit-tests
-      - integration-tests
-    services:
-      docker:
-        image: docker:dind
-        options: --privileged
-    env:
-      DOCKER_HOST: tcp://localhost:2375
-      DOCKER_TLS_CERTDIR: ""
-      DOCKER_DRIVER: overlay2
+    needs: build
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ProdMonitorPublish
 
       - name: Set up Test Environment
         run: dotnet --info
 
-      - name: Run End-to-End Tests
+      - name: Run Integration Tests
         run: |
-          chmod +x ./scripts/ci/Test/run_tests.sh
-          ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj
+          chmod +x ./scripts/ci/Test/run_integration_tests.sh
+          ./scripts/ci/Test/run_integration_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTest/ProdMonitor.IntegrationTest.csproj
+          
+        
+    
