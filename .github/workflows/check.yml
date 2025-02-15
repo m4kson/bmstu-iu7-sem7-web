@@ -33,7 +33,7 @@ jobs:
 
   unit_tests:
     runs-on: ubuntu-latest
-    needs: build
+    #needs: build
 
     steps:
       - name: Checkout repository
@@ -51,11 +51,11 @@ jobs:
         run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
 
       - name: Unit Tests
-        run: dotnet test ./src/ProdMonitor.Test/ProdMonitor.Test.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.Test.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
 
   integration_tests:
     runs-on: ubuntu-latest
-    needs: unit_tests
+    #needs: unit_tests
 
     steps:
       - name: Checkout repository
@@ -95,7 +95,7 @@ jobs:
 
   e2e_tests:
     runs-on: ubuntu-latest
-    needs: integration_tests
+    #needs: integration_tests
 
     steps:
       - name: Checkout repository
