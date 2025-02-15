@@ -31,5 +31,8 @@ jobs:
       - name: Build
         run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
 
+      - name: One Integration Test
+        run: dotnet test --filter "GetAssemblyLines_WithExistingAssemblyLines_ReturnsListOfAssemblyLines"  
+
       - name: Test
         run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore --no-build
