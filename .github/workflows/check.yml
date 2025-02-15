@@ -34,5 +34,8 @@ jobs:
       - name: One Integration Test
         run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "GetAssemblyLines_WithExistingAssemblyLines_ReturnsListOfAssemblyLines" --configuration Release --no-restore --no-build
 
+      - name: Only one test failed
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.AssemblyLineIntegrationTests" --configuration Release --no-restore --no-build
+
       - name: Test
         run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
