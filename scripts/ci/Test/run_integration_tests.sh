@@ -20,7 +20,7 @@ set -e
 
 # 3. Запуск интеграционных тестов
 echo "Running integration tests..."
-dotnet test src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj --logger:trx --verbose
+dotnet test src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj
 
 # Проверка результата тестов
 if [ $? -eq 0 ]; then
