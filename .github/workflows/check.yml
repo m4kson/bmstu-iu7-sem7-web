@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+      
 
 jobs:
   build:
@@ -55,38 +56,36 @@ jobs:
           chmod +x ./scripts/ci/Test/run_tests.sh
           ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj
 
-  integration-tests:
-    name: Integration Tests
+  integration_tests:
     runs-on: ubuntu-latest
     services:
       postgres:
         image: postgres:15-alpine
-        ports:
-          - 5432:5432
         env:
           POSTGRES_USER: testuser
           POSTGRES_PASSWORD: testpassword
           POSTGRES_DB: testdb
-        options: --health-cmd="pg_isready -U testuser" --health-interval=10s --health-timeout=5s --health-retries=5
-    container:
-      image: mcr.microsoft.com/dotnet/sdk:8.0
-    needs: unit-tests
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U testuser"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-          
-      - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
+      - name: Install .NET
+        uses: actions/setup-dotnet@v3
         with:
-          name: ProdMonitorPublish
+          dotnet-version: '8.0'
 
-      - name: Set up Test Environment
-        run: dotnet --info
+      - name: Install Docker (если необходимо)
+        run: |
+          apt-get update
+          apt-get install -y docker.io
 
       - name: Run Integration Tests
         run: |
