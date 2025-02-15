@@ -58,6 +58,16 @@ jobs:
   integration-tests:
     name: Integration Tests
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpassword
+          POSTGRES_DB: testdb
+        options: --health-cmd="pg_isready -U testuser" --health-interval=10s --health-timeout=5s --health-retries=5
     container:
       image: mcr.microsoft.com/dotnet/sdk:8.0
     needs: unit-tests
@@ -65,6 +75,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          
       - name: Download Build Artifacts
         uses: actions/download-artifact@v4
         with:
