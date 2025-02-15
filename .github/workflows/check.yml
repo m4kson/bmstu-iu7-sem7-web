@@ -32,7 +32,7 @@ jobs:
         run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
 
       - name: One Integration Test
-        run: dotnet test --filter "GetAssemblyLines_WithExistingAssemblyLines_ReturnsListOfAssemblyLines"  
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "GetAssemblyLines_WithExistingAssemblyLines_ReturnsListOfAssemblyLines" --configuration Release --no-restore --no-build
 
       - name: Test
         run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore --no-build
