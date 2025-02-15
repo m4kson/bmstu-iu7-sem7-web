@@ -23,10 +23,10 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore 
-        run: dotnet restore ./src/./ProdMonitor.ProdMonitor.sln
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
 
       - name: Build
-        run: dotnet build ./src/./ProdMonitor.ProdMonitor.sln --configuration Release --no-restore
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test ./src/./ProdMonitor.ProdMonitor.sln --configuration Release --no-restore --no-build
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore --no-build
