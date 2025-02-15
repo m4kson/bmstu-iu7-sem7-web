@@ -9,80 +9,24 @@ on:
       - main
       
 
+env:
+  DOTNET_VERSION: "8.x"
+
 jobs:
   build:
-    name: Build Job
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/dotnet/sdk:8.0
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up .NET environment
-        run: dotnet --version
-
-      - name: Build Project
-        run: |
-          chmod +x ./scripts/ci/Build/build.sh
-          ./scripts/ci/Build/build.sh src/ProdMonitor/ProdMonitor.Web/ProdMonitor.Web.csproj ProdMonitorPublish ./src/ProdMonitor/
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: ProdMonitorPublish
-          path: ProdMonitorPublish/
-
-  unit-tests:
-    name: Unit Tests
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/dotnet/sdk:8.0
-    needs: build
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: ProdMonitorPublish
-
-      - name: Set up Test Environment
-        run: dotnet --info
-
-      - name: Run Unit Tests
-        run: |
-          chmod +x ./scripts/ci/Test/run_tests.sh
-          ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj
-
-  integration_tests:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:15-alpine
-        env:
-          POSTGRES_USER: testuser
-          POSTGRES_PASSWORD: testpassword
-          POSTGRES_DB: testdb
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U testuser"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install .NET
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Run Integration Tests
-        run: |
-         chmod +x ./scripts/ci/Test/run_tests.sh
-          ./scripts/ci/Test/run_tests.sh src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj
+      - name: Restore 
+        run: dotnet restore ./ProdMonitor.ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./ProdMonitor.ProdMonitor.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test ./ProdMonitor.ProdMonitor.sln --configuration Release --no-restore --no-build
