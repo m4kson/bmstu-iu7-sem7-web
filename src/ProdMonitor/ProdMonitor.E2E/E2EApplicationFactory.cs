@@ -29,7 +29,9 @@ public class E2EApplicationFactory : WebApplicationFactory<Program>, IAsyncLifet
         await _dbContainer.StartAsync();
         var prodMonitorContext = new ProdMonitorContext(new DbContextOptionsBuilder<ProdMonitorContext>()
             .UseNpgsql(_dbContainer.GetConnectionString()).Options);
+        Console.WriteLine("Starting database migrations...");
         await prodMonitorContext.Database.MigrateAsync();
+        Console.WriteLine("Database migrations completed.");
         await SeedTestData(prodMonitorContext);
     }
     
