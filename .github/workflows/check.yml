@@ -51,7 +51,7 @@ jobs:
         run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
 
       - name: Unit Tests
-        run: dotnet test ./src/ProdMonitor/ProdMonitor.Test.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
 
   integration_tests:
     runs-on: ubuntu-latest
