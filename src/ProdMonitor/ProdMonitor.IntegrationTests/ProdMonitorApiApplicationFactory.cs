@@ -14,12 +14,12 @@ namespace ProdMonitor.IntegrationTests;
 public class ProdMonitorApiApplicationFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder()
-        .WithImage("postgres:15-alpine")
-        .WithCleanUp(true)
-        .WithDatabase("testdb")
-        .WithUsername("testuser")
-        .WithPassword("testpassword")
-        .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5432))
+        // .WithImage("postgres:15-alpine")
+        // .WithCleanUp(true)
+        // .WithDatabase("testdb")
+        // .WithUsername("testuser")
+        // .WithPassword("testpassword")
+        // .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5432))
         .Build();
     
     protected override void ConfigureWebHost(IWebHostBuilder builder)
