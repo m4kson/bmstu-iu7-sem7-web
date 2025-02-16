@@ -16,6 +16,8 @@ namespace ProdMonitor.Domain.Models
         public DateOnly BirthDay { get; set; } 
         public SexType Sex { get; set; } 
         public RoleType Role { get; set; } 
+        public string? TwoFactorCode { get; set; }
+        public DateTime? TwoFactorExpiration { get; set; }
 
         public User(Guid id,
             string name,
@@ -27,7 +29,9 @@ namespace ProdMonitor.Domain.Models
             byte[] passwordSalt,
             DateOnly birthDay,
             SexType sex,
-            RoleType role)
+            RoleType role,
+            string? twoFactorCode = null,
+            DateTime? twoFactorExpiration = null)
         {
             Id = id;
             Name = name;
@@ -40,6 +44,8 @@ namespace ProdMonitor.Domain.Models
             BirthDay = birthDay;
             Sex = sex;
             Role = role;
+            TwoFactorCode = twoFactorCode;
+            TwoFactorExpiration = twoFactorExpiration;
         }
     }
 }

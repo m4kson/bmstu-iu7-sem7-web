@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ProdMonitor.DataAccess.Context;
@@ -11,9 +12,11 @@ using ProdMonitor.DataAccess.Context;
 namespace ProdMonitor.DataAccess.Migrations
 {
     [DbContext(typeof(ProdMonitorContext))]
-    partial class ProdMonitorContextModelSnapshot : ModelSnapshot
+    [Migration("20250216063101_AddTwoFactorToUser")]
+    partial class AddTwoFactorToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

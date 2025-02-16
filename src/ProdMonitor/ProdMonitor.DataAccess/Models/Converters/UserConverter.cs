@@ -30,7 +30,9 @@ namespace ProdMonitor.DataAccess.Models.Converters
                 passwordSalt: userDb.PasswordSalt,
                 birthDay: userDb.BirthDay,
                 sex: sex,
-                role: role);
+                role: role,
+                twoFactorCode: userDb.TwoFactorCode,
+                twoFactorExpiration: userDb.TwoFactorExpiration);
         }
 
         public static UserDb? ToDb(User? userDomain)
@@ -53,7 +55,9 @@ namespace ProdMonitor.DataAccess.Models.Converters
                 passwordSalt: userDomain.PasswordSalt,
                 birthDay: userDomain.BirthDay,
                 sex: sex,
-                role: role);
+                role: role,
+                twoFactorCode: userDomain.TwoFactorCode,
+                twoFactorExpiration: userDomain.TwoFactorExpiration);
 
         }
     }
