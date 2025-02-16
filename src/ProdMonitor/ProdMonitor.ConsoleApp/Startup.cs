@@ -966,8 +966,22 @@ namespace ProdMonitor.ConsoleApp
 
                     _currentUser = await _authenticationService.LoginAsync(authModel);
 
-                    Console.WriteLine($"Welcome, {_currentUser.Name}!");
-                    return;
+                    await _authenticationService.SendTwoFactorCode(_currentUser);
+
+                    Console.WriteLine("We sent you an email with a two factor code.");
+                    Console.WriteLine("Enter two factor code:");
+                    var code = Console.ReadLine();
+
+                    if (await _authenticationService.VerifyTwoFactorCodeAsync(_currentUser.Id, code))
+                    {
+                        Console.WriteLine($"Welcome, {_currentUser.Name}!");
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid two factor code.");
+                    }
+                    
                 }
                 catch (UserNotFoundException ex)
                 {
@@ -978,6 +992,10 @@ namespace ProdMonitor.ConsoleApp
                     Console.WriteLine(ex.Message);
                 }
                 catch (LoginException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (WrongTwoFactorCodeException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }

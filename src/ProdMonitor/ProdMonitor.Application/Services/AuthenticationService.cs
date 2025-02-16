@@ -44,7 +44,7 @@ namespace ProdMonitor.Application.Services
                     _logger.Warning("Login failed: Incorrect password for email {Email}", authModel.Email);
                     throw new WrongPasswordException("Wrong password");
                 }
-
+                
                 _logger.Information("User {Email} successfully logged in", authModel.Email);
                 return user;
             }
@@ -153,7 +153,7 @@ namespace ProdMonitor.Application.Services
             return random.Next(100000, 999999).ToString();
         }
 
-        private async Task SendTwoFactorCode(User user)
+        public async Task SendTwoFactorCode(User user)
         {
             try
             {
@@ -173,8 +173,6 @@ namespace ProdMonitor.Application.Services
                     twoFactorExpiration: DateTime.UtcNow.AddMinutes(10));
 
                 await _userRepository.UpdateUserAsync(user.Id, updatedUser);
-
-                // Send the code via email (implement email sending logic here)
                 
                 await _emailService.SendEmailAsync(user.Email, "Ваш код", $"Ваш код 2FA: {code}");
 
