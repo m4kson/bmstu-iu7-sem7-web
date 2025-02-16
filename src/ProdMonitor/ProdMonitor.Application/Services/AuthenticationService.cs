@@ -118,6 +118,67 @@ namespace ProdMonitor.Application.Services
             }
         }
 
+        public async Task<User> ChangePasswordAsync(Guid userId, string newPassword, string oldPassword)
+        {
+            try
+            {
+                _logger.Information("Attempt to change password for user with ID {UserId}", userId);
+                if (newPassword.Length < _authenticationServiceConfiguration.MinPasswordLength)
+                {
+                    _logger.Error(
+                        "Password change failed: Please ensure your password are longer than {MinPasswordLength}",
+                        _authenticationServiceConfiguration.MinPasswordLength);
+                    throw new ArgumentException(
+                        $"Please ensure your password are longer than {_authenticationServiceConfiguration.MinPasswordLength}");
+                }
+
+                var user = await _userRepository.GetUserByIdAsync(userId);
+                if (user == null)
+                {
+                    _logger.Warning("Password change failed: User with ID {UserId} not found", userId);
+                    throw new UserNotFoundException($"User with ID {userId} not found");
+                }
+                
+                if (!VerifyPasswordHash(oldPassword, user.PasswordHash, user.PasswordSalt))
+                {
+                    _logger.Warning("Password change failed: Incorrect old password for user with ID {UserId}", userId);
+                    throw new WrongPasswordException("Wrong password");
+                }
+
+                byte[] passwordHash, passwordSalt;
+                CreatePasswordHash(newPassword, out passwordHash, out passwordSalt);
+
+                var updatedUser = new UserCreate(name: user.Name,
+                    surname: user.Surname,
+                    patronymic: user.Patronymic,
+                    department: user.Department,
+                    email: user.Email,
+                    passwordHash: passwordHash,
+                    passwordSalt: passwordSalt,
+                    birthDay: user.BirthDay,
+                    sex: user.Sex,
+                    role: user.Role);
+
+                var changedUser = await _userRepository.UpdateUserAsync(userId, updatedUser);
+
+                _logger.Information("Password for user with ID {UserId} successfully changed", userId);
+                return changedUser;
+            }
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Password change failed for user with ID {UserId}", userId);
+                throw new UserServiceException("Failed to change password", ex);
+            }
+        }
+
         public void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())

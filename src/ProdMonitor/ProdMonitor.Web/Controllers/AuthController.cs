@@ -83,6 +83,37 @@ public class AuthController(IAuthenticationService authenticationService,
             throw;
         }
     }
+    
+    [HttpPost("change-password")]
+    [Produces("application/json")]
+    [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
+    [ProducesProblems(StatusCodes.Status400BadRequest)]
+    [ProducesProblems(StatusCodes.Status404NotFound)]
+    [ProducesProblems(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto changePasswordData)
+    {
+        try
+        {
+            var user = await _authenticationService.ChangePasswordAsync(changePasswordData.UserId, changePasswordData.NewPassword, changePasswordData.OldPassword);
+            var response = user.ToDto();
+            return Ok(response);
+        }
+        catch (WrongPasswordException e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(ChangePassword)} : {e.Message}");
+            return BadRequest();
+        }
+        catch (UserNotFoundException e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(ChangePassword)} : {e.Message}");
+            return NotFound();
+        }
+        catch (Exception e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(ChangePassword)} : {e.Message}");
+            throw;
+        }
+    }
 
     
     [HttpPost("register")]
