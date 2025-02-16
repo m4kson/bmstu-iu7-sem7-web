@@ -115,7 +115,9 @@ namespace ProdMonitor.Application.Services
                     passwordSalt: passwordSalt,
                     birthDay: userData.BirthDay,
                     sex: userData.Sex,
-                    role: user.Role);
+                    role: user.Role,
+                    twoFactorCode: user.TwoFactorCode,
+                    twoFactorExpiration: user.TwoFactorExpiration);
                 
                 var updatedUser = await _userRepository.UpdateUserAsync(userId, newUser);
                 return updatedUser;
