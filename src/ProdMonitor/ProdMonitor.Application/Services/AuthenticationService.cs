@@ -13,14 +13,17 @@ namespace ProdMonitor.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly ILogger _logger;
+        private readonly IEmailService _emailService;
         private readonly AuthenticationServiceConfiguration _authenticationServiceConfiguration;
 
         public AuthenticationService(IUserRepository userRepository,
             ILogger logger,
+            IEmailService emailService,
             IOptions<AuthenticationServiceConfiguration> authenticationServiceConfiguration)
         {
             _userRepository = userRepository;
             _logger = logger;
+            _emailService = emailService;
             _authenticationServiceConfiguration = authenticationServiceConfiguration.Value;
         }
 
@@ -137,9 +140,93 @@ namespace ProdMonitor.Application.Services
         {
             if (user.Role != requiredRole)
             {
-                _logger.Warning("Unauthorized access attempt by user {Email}. Required role: {RequiredRole}, actual role: {ActualRole}",
-                                user.Email, requiredRole, user.Role);
+                _logger.Warning(
+                    "Unauthorized access attempt by user {Email}. Required role: {RequiredRole}, actual role: {ActualRole}",
+                    user.Email, requiredRole, user.Role);
                 throw new UnauthorizedAccessException($"User does not have the required role: {requiredRole}");
+            }
+        }
+
+        private string GenerateTwoFactorCode()
+        {
+            var random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        private async Task SendTwoFactorCode(User user)
+        {
+            try
+            {
+                var code = GenerateTwoFactorCode();
+
+                var updatedUser = new UserCreate(name: user.Name,
+                    surname: user.Surname,
+                    patronymic: user.Patronymic,
+                    department: user.Department,
+                    email: user.Email,
+                    passwordHash: user.PasswordHash,
+                    passwordSalt: user.PasswordSalt,
+                    birthDay: user.BirthDay,
+                    sex: user.Sex,
+                    role: user.Role,
+                    twoFactorCode: code,
+                    twoFactorExpiration: DateTime.UtcNow.AddMinutes(10));
+
+                await _userRepository.UpdateUserAsync(user.Id, updatedUser);
+
+                // Send the code via email (implement email sending logic here)
+                
+                await _emailService.SendEmailAsync(user.Email, "Ваш код", $"Ваш код 2FA: {code}");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to send 2FA code to user with ID {UserId}.", user.Id);
+                throw new UserServiceException("Failed to send 2FA code", ex);
+            }
+        }
+
+        public async Task<bool> VerifyTwoFactorCodeAsync(Guid userId, string code)
+        {
+            try
+            {
+                var user = await _userRepository.GetUserByIdAsync(userId);
+                if (user == null)
+                {
+                    _logger.Warning("User with ID {UserId} not found.", userId);
+                    throw new UserNotFoundException($"User with id {userId} not found");
+                }
+
+                if (user.TwoFactorCode != code || user.TwoFactorExpiration < DateTime.UtcNow)
+                {
+                    return false;
+                }
+
+                var updatedUser = new UserCreate(name: user.Name,
+                    surname: user.Surname,
+                    patronymic: user.Patronymic,
+                    department: user.Department,
+                    email: user.Email,
+                    passwordHash: user.PasswordHash,
+                    passwordSalt: user.PasswordSalt,
+                    birthDay: user.BirthDay,
+                    sex: user.Sex,
+                    role: user.Role,
+                    twoFactorCode: null,
+                    twoFactorExpiration: null);
+
+                await _userRepository.UpdateUserAsync(user.Id, updatedUser);
+
+                return true;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to verify 2FA code for user with ID {UserId}.", userId);
+                throw new UserServiceException("Failed to verify 2FA code", ex);
             }
         }
     }
