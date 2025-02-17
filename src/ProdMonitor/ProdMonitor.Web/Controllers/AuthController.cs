@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ProdMonitor.Domain.Exceptions;
@@ -59,11 +60,11 @@ public class AuthController(IAuthenticationService authenticationService,
     [ProducesProblems(StatusCodes.Status400BadRequest)]
     [ProducesProblems(StatusCodes.Status404NotFound)]
     [ProducesProblems(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> VerifyTwoFactor(Guid userId, string twoFactorCode)
+    public async Task<IActionResult> VerifyTwoFactor([FromBody] VerifyDto verifyData)
     {
         try
         {
-            var verify = await _authenticationService.VerifyTwoFactorCodeAsync(userId, twoFactorCode);
+            var verify = await _authenticationService.VerifyTwoFactorCodeAsync(verifyData.UserId, verifyData.TwoFactorCode);
 
             if (!verify)
             {
@@ -84,17 +85,17 @@ public class AuthController(IAuthenticationService authenticationService,
         }
     }
     
-    [HttpPost("change-password")]
+    [HttpPost("change-password/{id}")]
     [Produces("application/json")]
     [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
     [ProducesProblems(StatusCodes.Status400BadRequest)]
     [ProducesProblems(StatusCodes.Status404NotFound)]
     [ProducesProblems(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto changePasswordData)
+    public async Task<IActionResult> ChangePassword([FromRoute, Required] Guid id, [FromBody] ChangePasswordDto changePasswordData)
     {
         try
         {
-            var user = await _authenticationService.ChangePasswordAsync(changePasswordData.UserId, changePasswordData.NewPassword, changePasswordData.OldPassword);
+            var user = await _authenticationService.ChangePasswordAsync(id, changePasswordData.NewPassword, changePasswordData.OldPassword);
             var response = user.ToDto();
             return Ok(response);
         }

@@ -26,7 +26,9 @@ public static class UserDtoConverter
             passwordSalt: user.PasswordSalt,
             birthDay: user.BirthDay,
             sex: user.Sex.ToDto(),
-            role: user.Role.ToDto()
+            role: user.Role.ToDto(),
+            twoFactorCode: user.TwoFactorCode,
+            twoFactorExpiration: user.TwoFactorExpiration
         );
     }
 

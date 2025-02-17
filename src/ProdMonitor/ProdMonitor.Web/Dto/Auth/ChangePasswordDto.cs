@@ -2,14 +2,9 @@ using System.Text.Json.Serialization;
 
 namespace ProdMonitor.Web.Dto.Auth;
 
-public class ChangePasswordDto(Guid userId,
-    string oldPassword,
+public class ChangePasswordDto(string oldPassword,
     string newPassword)
 {
-    [JsonPropertyName("userId")]
-    [JsonRequired]
-    public Guid UserId { get; set; } = userId;
-    
     [JsonPropertyName("oldPassword")]
     [JsonRequired]
     public string OldPassword { get; set; } = oldPassword;
