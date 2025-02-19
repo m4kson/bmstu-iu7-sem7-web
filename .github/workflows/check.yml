@@ -10,6 +10,8 @@ on:
       
 env:
   DOTNET_VERSION: "8.x"
+  TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+  TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
 
 jobs:
   build:
