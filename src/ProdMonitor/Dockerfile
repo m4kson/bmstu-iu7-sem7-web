@@ -9,7 +9,8 @@ RUN dotnet publish ProdMonitor.Web/ProdMonitor.Web.csproj -c Release -o /app/out
 
 WORKDIR /app/out
 
-EXPOSE 5000
+EXPOSE 5091
 ENV ASPNETCORE_URLS=http://+:5091
+ENV ASPNETCORE_ENVIRONMENT=Development
 
 ENTRYPOINT ["dotnet", "ProdMonitor.Web.dll"]
