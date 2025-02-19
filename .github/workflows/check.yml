@@ -10,8 +10,10 @@ on:
       
 env:
   DOTNET_VERSION: "8.x"
-  TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+  TEST_EMAIL_1: ${{ secrets.TEST_EMAIL_1 }}
+  TEST_EMAIL_2: ${{ secrets.TEST_EMAIL_2 }}
   TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+  TEST_PASSWORD_NEW: ${{ secrets.TEST_PASSWORD }}
 
 jobs:
   build:
