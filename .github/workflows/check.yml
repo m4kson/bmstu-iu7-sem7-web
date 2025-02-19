@@ -143,11 +143,8 @@ jobs:
       
       - name: Wait for API to be ready
         run: |
-          until curl -sSf http://localhost:5091/health; do
-            echo "Waiting for API..."
-            sleep 5
-          done
-
+          echo "Waiting for API to start..."
+          sleep 10  # Даем время API на запуск
 
       - name: Run tests
         run: dotnet test ./src/ProdMonitor/ProdMonitor.BDDTests/ProdMonitor.BDDTests.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
