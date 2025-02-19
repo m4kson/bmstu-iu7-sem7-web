@@ -133,6 +133,25 @@ namespace ProdMonitor.Application.Services
             }
         }
         
+        public async Task DeleteUserAsync(Guid userId)
+        {
+            _logger.Information("Attempting to delete user with ID {UserId}.", userId);
+            try
+            {
+                await _userRepository.DeleteUserAsync(userId);
+                _logger.Information("Successfully deleted user with ID {UserId}.", userId);
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to delete user with ID {UserId}.", userId);
+                throw new UserServiceException("Failed to delete user", ex);
+            }
+        }
+        
         public void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())

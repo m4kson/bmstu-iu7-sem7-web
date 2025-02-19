@@ -96,6 +96,7 @@ public class AuthController(IAuthenticationService authenticationService,
         try
         {
             var user = await _authenticationService.ChangePasswordAsync(id, changePasswordData.NewPassword, changePasswordData.OldPassword);
+            await _authenticationService.SendTwoFactorCode(user);
             var response = user.ToDto();
             return Ok(response);
         }

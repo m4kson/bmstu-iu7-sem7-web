@@ -119,4 +119,28 @@ public class UsersController(IUserService userService,
             throw;
         }
     }
+    
+    [HttpDelete("{id}")]
+    [Produces("application/json")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesProblems(StatusCodes.Status404NotFound)]
+    [ProducesProblems(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> DeleteUser([FromRoute, Required] Guid id)
+    {
+        try
+        {
+            await _userService.DeleteUserAsync(id);
+            return NoContent();
+        }
+        catch (UserNotFoundException e)
+        {
+            _logger.Error(e, $"{nameof(UsersController)} : {nameof(DeleteUser)} : {e.Message}");
+            return NotFound();
+        }
+        catch (Exception e)
+        {
+            _logger.Error(e, $"{nameof(UsersController)} : {nameof(DeleteUser)} : {e.Message}");
+            throw;
+        }
+    }
 }

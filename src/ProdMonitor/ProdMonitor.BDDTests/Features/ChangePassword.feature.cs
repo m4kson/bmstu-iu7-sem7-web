@@ -19,21 +19,21 @@ namespace ProdMonitor.BDDTests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Xunit.TraitAttribute("Category", "auth")]
-    public partial class UserLoginWith2FAFeature : object, Xunit.IClassFixture<UserLoginWith2FAFeature.FixtureData>, System.IDisposable
+    [Xunit.TraitAttribute("Category", "change-password")]
+    public partial class UserChangeHisPasswordWith2FAFeature : object, Xunit.IClassFixture<UserChangeHisPasswordWith2FAFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "auth"};
+                "change-password"};
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Authentication.feature"
+#line 1 "ChangePassword.feature"
 #line hidden
         
-        public UserLoginWith2FAFeature(UserLoginWith2FAFeature.FixtureData fixtureData, ProdMonitor_BDDTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public UserChangeHisPasswordWith2FAFeature(UserChangeHisPasswordWith2FAFeature.FixtureData fixtureData, ProdMonitor_BDDTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -42,8 +42,8 @@ namespace ProdMonitor.BDDTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "User Login with 2FA", "  As a user, I want to log in using email and password, followed by a two-factor " +
-                    "authentication code.", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "User change his password with 2FA", "    As a user, I want to change my password using my current password, followed b" +
+                    "y a two-factor authentication code.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,16 +83,16 @@ namespace ProdMonitor.BDDTests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Successful login with correct credentials and 2FA code")]
-        [Xunit.TraitAttribute("FeatureTitle", "User Login with 2FA")]
-        [Xunit.TraitAttribute("Description", "Successful login with correct credentials and 2FA code")]
-        public void SuccessfulLoginWithCorrectCredentialsAnd2FACode()
+        [Xunit.SkippableFactAttribute(DisplayName="Successful password change with correct credentials and 2FA code")]
+        [Xunit.TraitAttribute("FeatureTitle", "User change his password with 2FA")]
+        [Xunit.TraitAttribute("Description", "Successful password change with correct credentials and 2FA code")]
+        public void SuccessfulPasswordChangeWithCorrectCredentialsAnd2FACode()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful login with correct credentials and 2FA code", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful password change with correct credentials and 2FA code", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
-  this.ScenarioInitialize(scenarioInfo);
+    this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -102,19 +102,28 @@ namespace ProdMonitor.BDDTests.Features
             {
                 this.ScenarioStart();
 #line 6
-    testRunner.Given("a registered user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Given("a registered user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-    testRunner.When("the user enters valid credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.When("the user enters valid credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-    testRunner.And("the system sends a 2FA code to their email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("the system sends a 2FA code to their email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-    testRunner.And("the user enters the correct 2FA code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("the user enters the correct 2FA code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
-    testRunner.Then("the user should be successfully authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.And("the user enters a new password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+        testRunner.And("the system sends a 2FA code to their email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+        testRunner.And("the user enters the correct 2FA code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+        testRunner.Then("the user should be able to log in with the new password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -127,12 +136,12 @@ namespace ProdMonitor.BDDTests.Features
             
             public FixtureData()
             {
-                UserLoginWith2FAFeature.FeatureSetup();
+                UserChangeHisPasswordWith2FAFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                UserLoginWith2FAFeature.FeatureTearDown();
+                UserChangeHisPasswordWith2FAFeature.FeatureTearDown();
             }
         }
     }

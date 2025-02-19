@@ -1,3 +1,4 @@
+@auth
 Feature: User Login with 2FA
   As a user, I want to log in using email and password, followed by a two-factor authentication code.
   

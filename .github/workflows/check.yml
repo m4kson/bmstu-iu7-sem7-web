@@ -113,3 +113,35 @@ jobs:
 
       - name: E2E Tests
         run: dotnet test ./src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
+
+  bdd_tests:
+    runs-on: ubuntu-latest
+    needs: e2e_tests
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
+
+      - name: Start API service
+        run: |
+          docker-compose -f ../src/docker-compose.yml up -d
+        if: success()
+      
+      - name: Wait for API to be ready
+        run: |
+          echo "Waiting for API to start..."
+          sleep 10  # Даем время API на запуск
+
+      - name: Run tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.BDDTests/ProdMonitor.BDDTests.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"

@@ -16,8 +16,8 @@ using ProdMonitor.Web.Dto.Enums;
 namespace ProdMonitor.BDDTests.Steps;
 
 [Binding]
-[Scope(Tag = "auth")]
-public class AuthenticationSteps
+[Scope(Tag = "change-password")]
+public class CangePasswordSteps
 {
     private readonly HttpClient _client;
     private string _userId;
@@ -29,7 +29,7 @@ public class AuthenticationSteps
     private string _input2FACode;
     private HttpResponseMessage _response;
 
-    public AuthenticationSteps()
+    public CangePasswordSteps()
     {
         _client = new HttpClient { BaseAddress = new Uri("http://localhost:5091/") };
     }
@@ -37,15 +37,15 @@ public class AuthenticationSteps
     [Given(@"a registered user")]
     public async Task GivenARegisteredUser()
     {
-        _email = "maksimka.rudenko@mail.ru";
-        _password = "Password123!";
+        _email = "maksimka.rudenko@gmail.com";
+        _password = "Password12!";
 
         var technicalUser = new
         {
-            Name = "Technical",
-            Surname = "User",
-            Fathername = "Father",
-            Department = "IT",
+            Name = "Technical2",
+            Surname = "User2",
+            Fathername = "Father2",
+            Department = "IT2",
             Email = _email,
             Password = _password,
             BirthDate = new DateOnly(1990, 1, 1),
