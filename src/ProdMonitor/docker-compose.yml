@@ -27,11 +27,6 @@ services:
       ConnectionStrings__DefaultConnection: "User ID=m4ks0n;Password=admin;Server=db;Port=5432;Database=ProdMonitor"
       ASPNETCORE_ENVIRONMENT: Development
 
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5091/health"]
-      interval: 10s
-      retries: 5
-
     depends_on:
       - db
 
