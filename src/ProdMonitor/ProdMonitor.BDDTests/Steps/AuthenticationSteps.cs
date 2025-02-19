@@ -32,14 +32,13 @@ public class AuthenticationSteps
     public AuthenticationSteps()
     {
         _client = new HttpClient { BaseAddress = new Uri("http://localhost:5091/") };
+        _email = Environment.GetEnvironmentVariable("TEST_EMAIL_1");
+        _password = Environment.GetEnvironmentVariable("TEST_PASSWORD");
     }
 
     [Given(@"a registered user")]
     public async Task GivenARegisteredUser()
     {
-        _email = "maksimka.rudenko@mail.ru";
-        _password = "Password123!";
-
         var technicalUser = new
         {
             Name = "Technical",
@@ -140,65 +139,6 @@ public class AuthenticationSteps
     [Then(@"the user should be successfully authenticated")]
     public void ThenTheUserShouldBeSuccessfullyAuthenticated()
     {
-        _response.StatusCode.Should().Be(HttpStatusCode.OK);
-    }
-
-
-    [When(@"the user enters a new password")]
-    public async Task WhenTheUserEntersANewPassword()
-    {
-        _newPassword = "Password1234!";
-        
-        var newCredentials = new
-        {
-            OldPassword = _password,
-            NewPassword = _newPassword
-        };
-        
-        var contentRegister = new StringContent(JsonConvert.SerializeObject(newCredentials), Encoding.UTF8, "application/json");
-
-        var response = await _client.PostAsync($"api/v1/Auth/change-password/{_userId}", contentRegister);
-
-        if (response.StatusCode != HttpStatusCode.BadRequest)
-        {
-            response.EnsureSuccessStatusCode();
-        }
-        else
-        {
-            var responseContent = await response.Content.ReadAsStringAsync();
-            throw new Exception($"Registration failed: {responseContent}");
-        }
-
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
-        
-    }
-
-    [Then(@"the user should be able to log in with the new password")]
-    public async Task ThenTheUserShouldBeAbleToLogInWithTheNewPassword()
-    {
-        _password = _newPassword;
-        
-        var technicalUser = new
-        {
-            Login = _email,
-            Password = _password
-        };
-        
-        var contentRegister = new StringContent(JsonConvert.SerializeObject(technicalUser), Encoding.UTF8, "application/json");
-
-        var _response = await _client.PostAsync("api/v1/Auth/login", contentRegister);
-
-        var responseContent = await _response.Content.ReadAsStringAsync();
-
-        if (_response.StatusCode != HttpStatusCode.BadRequest)
-        {
-            _response.EnsureSuccessStatusCode();
-        }
-        else
-        {
-            throw new Exception($"Registration failed: {responseContent}");
-        }
-        
         _response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
     

@@ -32,14 +32,14 @@ public class CangePasswordSteps
     public CangePasswordSteps()
     {
         _client = new HttpClient { BaseAddress = new Uri("http://localhost:5091/") };
+        _email = Environment.GetEnvironmentVariable("TEST_EMAIL_2");
+        _password = Environment.GetEnvironmentVariable("TEST_PASSWORD");
+        _newPassword = Environment.GetEnvironmentVariable("TEST_PASSWORD_NEW");
     }
 
     [Given(@"a registered user")]
     public async Task GivenARegisteredUser()
     {
-        _email = "maksimka.rudenko@gmail.com";
-        _password = "Password12!";
-
         var technicalUser = new
         {
             Name = "Technical2",
@@ -147,8 +147,6 @@ public class CangePasswordSteps
     [When(@"the user enters a new password")]
     public async Task WhenTheUserEntersANewPassword()
     {
-        _newPassword = "Password1234!";
-        
         var newCredentials = new
         {
             OldPassword = _password,
