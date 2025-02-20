@@ -115,7 +115,9 @@ namespace ProdMonitor.Application.Services
                     passwordSalt: passwordSalt,
                     birthDay: userData.BirthDay,
                     sex: userData.Sex,
-                    role: user.Role);
+                    role: user.Role,
+                    twoFactorCode: user.TwoFactorCode,
+                    twoFactorExpiration: user.TwoFactorExpiration);
                 
                 var updatedUser = await _userRepository.UpdateUserAsync(userId, newUser);
                 return updatedUser;
@@ -128,6 +130,25 @@ namespace ProdMonitor.Application.Services
             {
                 _logger.Error(ex, "Failed to update user with ID {UserId}.", userId);
                 throw new UserServiceException("Failed to update user data", ex);
+            }
+        }
+        
+        public async Task DeleteUserAsync(Guid userId)
+        {
+            _logger.Information("Attempting to delete user with ID {UserId}.", userId);
+            try
+            {
+                await _userRepository.DeleteUserAsync(userId);
+                _logger.Information("Successfully deleted user with ID {UserId}.", userId);
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to delete user with ID {UserId}.", userId);
+                throw new UserServiceException("Failed to delete user", ex);
             }
         }
         

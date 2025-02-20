@@ -21,6 +21,8 @@ namespace ProdMonitor.DataAccess.Models
         public DateOnly BirthDay { get; set; }
         public SexTypeDb Sex { get; set; }
         public RoleTypeDb Role { get; set; }
+        public string? TwoFactorCode { get; set; }
+        public DateTime? TwoFactorExpiration { get; set; }
 
         public virtual ICollection<DetailOrderDb>? DetailOrders { get; set; } = [];
         public virtual ICollection<ServiceRequestDb>? ServiceRequests { get; set; } = [];
@@ -36,7 +38,9 @@ namespace ProdMonitor.DataAccess.Models
             byte[] passwordSalt,
             DateOnly birthDay,
             SexTypeDb sex,
-            RoleTypeDb role) 
+            RoleTypeDb role,
+            string? twoFactorCode = null,
+            DateTime? twoFactorExpiration = null) 
         {
             Id = id;
             Name = name;
@@ -49,6 +53,8 @@ namespace ProdMonitor.DataAccess.Models
             BirthDay = birthDay;
             Sex = sex;
             Role = role;
+            TwoFactorCode = twoFactorCode;
+            TwoFactorExpiration = twoFactorExpiration;
         }
     }
 }

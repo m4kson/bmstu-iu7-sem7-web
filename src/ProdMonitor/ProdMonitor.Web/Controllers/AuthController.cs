@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ProdMonitor.Domain.Exceptions;
 using ProdMonitor.Domain.Interfaces.Services;
@@ -31,6 +33,7 @@ public class AuthController(IAuthenticationService authenticationService,
         try
         {
             var user = await _authenticationService.LoginAsync(loginData.ToDomain());
+            await _authenticationService.SendTwoFactorCode(user);
             var response = user.ToDto();
             return Ok(response);
         }
@@ -50,6 +53,70 @@ public class AuthController(IAuthenticationService authenticationService,
             throw;
         }
     }
+    
+    [HttpPost("verify-2fa")]
+    [Produces("application/json")]
+    [ProducesResponseType(typeof(Ok), StatusCodes.Status200OK)]
+    [ProducesProblems(StatusCodes.Status400BadRequest)]
+    [ProducesProblems(StatusCodes.Status404NotFound)]
+    [ProducesProblems(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> VerifyTwoFactor([FromBody] VerifyDto verifyData)
+    {
+        try
+        {
+            var verify = await _authenticationService.VerifyTwoFactorCodeAsync(verifyData.UserId, verifyData.TwoFactorCode);
+
+            if (!verify)
+            {
+                return BadRequest("Invalid or expired 2FA code.");
+            }
+            
+            return Ok();
+        }
+        catch (UserNotFoundException e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(VerifyTwoFactor)} : {e.Message}");
+            return NotFound();
+        }
+        catch (Exception e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(VerifyTwoFactor)} : {e.Message}");
+            throw;
+        }
+    }
+    
+    [HttpPost("change-password/{id}")]
+    [Produces("application/json")]
+    [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
+    [ProducesProblems(StatusCodes.Status400BadRequest)]
+    [ProducesProblems(StatusCodes.Status404NotFound)]
+    [ProducesProblems(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> ChangePassword([FromRoute, Required] Guid id, [FromBody] ChangePasswordDto changePasswordData)
+    {
+        try
+        {
+            var user = await _authenticationService.ChangePasswordAsync(id, changePasswordData.NewPassword, changePasswordData.OldPassword);
+            await _authenticationService.SendTwoFactorCode(user);
+            var response = user.ToDto();
+            return Ok(response);
+        }
+        catch (WrongPasswordException e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(ChangePassword)} : {e.Message}");
+            return BadRequest();
+        }
+        catch (UserNotFoundException e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(ChangePassword)} : {e.Message}");
+            return NotFound();
+        }
+        catch (Exception e)
+        {
+            _logger.Error(e, $"{nameof(AuthController)} : {nameof(ChangePassword)} : {e.Message}");
+            throw;
+        }
+    }
+
     
     [HttpPost("register")]
     [Produces("application/json")]

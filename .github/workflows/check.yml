@@ -1,0 +1,158 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+env:
+  DOTNET_VERSION: "8.x"
+  TEST_EMAIL_1: ${{ secrets.TEST_EMAIL_1 }}
+  TEST_EMAIL_2: ${{ secrets.TEST_EMAIL_2 }}
+  TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+  TEST_PASSWORD_NEW: ${{ secrets.TEST_PASSWORD }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
+
+  unit_tests:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
+
+      - name: Unit Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.Test/ProdMonitor.Test.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
+
+  integration_tests:
+    runs-on: ubuntu-latest
+    needs: unit_tests
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
+
+      - name: AssemblyLines Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.AssemblyLineIntegrationTests" --configuration Release --no-restore --no-build
+
+      - name: Details Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.DetailIntegrationTests" --configuration Release --no-restore --no-build
+      
+      - name: DetailOrders Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.DetailOrderIntegrationTests" --configuration Release --no-restore --no-build
+
+      - name: ServiceReports Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.ServiceReportIntegrationTests" --configuration Release --no-restore --no-build
+      
+      - name: ServiceRequests Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.ServiceRequestIntegrationTests" --configuration Release --no-restore --no-build
+
+      - name: Tractors Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.TractorIntegrationTests" --configuration Release --no-restore --no-build
+
+      - name: Users Integration Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.sln --filter "FullyQualifiedName~ProdMonitor.IntegrationTests.UserIntegrationTests" --configuration Release --no-restore --no-build
+
+  e2e_tests:
+    runs-on: ubuntu-latest
+    needs: integration_tests
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
+
+      - name: E2E Tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"
+
+  bdd_tests:
+    runs-on: ubuntu-latest
+    needs: e2e_tests
+
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ./src/ProdMonitor/ProdMonitor.sln
+
+      - name: Build
+        run: dotnet build ./src/ProdMonitor/ProdMonitor.sln --configuration Release --no-restore
+
+      - name: Install Docker Compose
+        run: sudo apt-get update && sudo apt-get install -y docker-compose
+
+      - name: Start API service
+        run: |
+          docker-compose -f ./src/ProdMonitor/docker-compose.yml up -d
+        if: success()
+      
+      - name: Wait for API to be ready
+        run: |
+          until curl -sSf http://localhost:5091/api/v1/index.html; do
+            echo "Waiting for API..."
+            sleep 5
+          done
+        timeout-minutes: 2
+
+      - name: Run tests
+        run: dotnet test ./src/ProdMonitor/ProdMonitor.BDDTests/ProdMonitor.BDDTests.csproj --configuration Release --no-restore --no-build --logger "console;verbosity=detailed"

@@ -25,11 +25,18 @@ services:
     build: .
     environment:
       ConnectionStrings__DefaultConnection: "User ID=m4ks0n;Password=admin;Server=db;Port=5432;Database=ProdMonitor"
-      
+      ASPNETCORE_URLS: "http://+:5091"
+      ASPNETCORE_ENVIRONMENT: Development
+
     depends_on:
       - db
+
     stdin_open: true
     tty: true  
+
+    ports:
+      - "5091:5091"
+      
 
   pgadmin:
     image: dpage/pgadmin4:latest

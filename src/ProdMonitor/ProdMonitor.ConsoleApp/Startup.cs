@@ -109,6 +109,7 @@ namespace ProdMonitor.ConsoleApp
                     Console.WriteLine("9.  Посмотреть информацию о производственной линии");
                     Console.WriteLine("10. Посмотреть список производственных линий");
                     Console.WriteLine("11. Посмотреть журнал обслуживания");
+                    Console.WriteLine("12. Изменить пароль");
                     Console.WriteLine("0.  Выход");
 
                     var choice = Console.ReadLine();
@@ -147,6 +148,9 @@ namespace ProdMonitor.ConsoleApp
                             break;
                         case "11":
                             await GetReports();
+                            break;
+                        case "12":
+                            await ChangePassword();
                             break;
                         case "0":
                             Logout();
@@ -943,6 +947,44 @@ namespace ProdMonitor.ConsoleApp
             }
         }
 
+        private async Task ChangePassword()
+        {
+            try
+            {
+                Console.WriteLine("Введите старый пароль:");
+                var oldPassword = Console.ReadLine();
+
+                Console.WriteLine("Введите новый пароль:");
+                var newPassword = Console.ReadLine();
+                
+                await _authenticationService.SendTwoFactorCode(_currentUser);
+
+                Console.WriteLine("We sent you an email with a two factor code.");
+                Console.WriteLine("Enter two factor code:");
+                var code = Console.ReadLine();
+
+                if (!await _authenticationService.VerifyTwoFactorCodeAsync(_currentUser.Id, code))
+                {
+                    throw new WrongTwoFactorCodeException();
+                }
+
+                await _authenticationService.ChangePasswordAsync(_currentUser.Id, newPassword, oldPassword);
+                Console.WriteLine("Пароль успешно изменен.");
+            }
+            catch (WrongPasswordException ex)
+            {
+                Console.WriteLine($"Ошибка при изменении пароля: {ex.Message}");
+            }
+            catch (WrongTwoFactorCodeException ex)
+            {
+                Console.WriteLine($"Ошибка при изменении пароля: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при изменении пароля: {ex.Message}");
+            }
+        }
+
         private async Task Login()
         {
             const int maxAttempts = 3;
@@ -966,8 +1008,22 @@ namespace ProdMonitor.ConsoleApp
 
                     _currentUser = await _authenticationService.LoginAsync(authModel);
 
-                    Console.WriteLine($"Welcome, {_currentUser.Name}!");
-                    return;
+                    await _authenticationService.SendTwoFactorCode(_currentUser);
+
+                    Console.WriteLine("We sent you an email with a two factor code.");
+                    Console.WriteLine("Enter two factor code:");
+                    var code = Console.ReadLine();
+
+                    if (await _authenticationService.VerifyTwoFactorCodeAsync(_currentUser.Id, code))
+                    {
+                        Console.WriteLine($"Welcome, {_currentUser.Name}!");
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid two factor code.");
+                    }
+                    
                 }
                 catch (UserNotFoundException ex)
                 {
@@ -978,6 +1034,10 @@ namespace ProdMonitor.ConsoleApp
                     Console.WriteLine(ex.Message);
                 }
                 catch (LoginException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (WrongTwoFactorCodeException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }

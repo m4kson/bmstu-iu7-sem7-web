@@ -40,6 +40,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddSingleton(Log.Logger);
+builder.Services.AddSingleton<IEmailService, EmailService>();
 
 builder.Services.AddTransient<IAssemblyLineService, AssemblyLineService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();

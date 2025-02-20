@@ -62,6 +62,7 @@ namespace ProdMonitor.ConsoleApp
                         services.AddTransient<IOrderDetailRepository, OrderDetailRepository>(); // Add this line
 
                         services.AddSingleton(Log.Logger);
+                        services.AddSingleton<IEmailService, EmailService>();
 
                         services.Configure<AuthenticationServiceConfiguration>(
                             context.Configuration.GetSection(AuthenticationServiceConfiguration.ConfigurationSectionName)
