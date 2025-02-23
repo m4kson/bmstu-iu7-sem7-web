@@ -1,7 +1,14 @@
+using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Logs;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Extensions.Hosting;
 using ProdMonitor.Application.Services;
 using ProdMonitor.DataAccess.Context;
 using ProdMonitor.DataAccess.Repositories;
@@ -60,7 +67,49 @@ builder.Services.AddTransient<IServiceRequestRepository, ServiceRequestRepositor
 builder.Services.AddTransient<ITractorRepository, TractorRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 
+//OpenTelemetry
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resource => resource.AddService("ProdMonitorAPI"))
+    .WithMetrics(metrics =>
+    {
+        // Общие метрики приложения
+        metrics
+            .AddHttpClientInstrumentation()
+            .AddAspNetCoreInstrumentation()
+            .AddProcessInstrumentation()
+            .AddPrometheusExporter();
+            // .AddOtlpExporter(otlpOptions =>
+            // {
+            //     otlpOptions.Endpoint = new Uri("http://prodmonitor.dashboard:18889");
+            // });
+
+        metrics
+            .AddMeter("trace_cpu_usage", "trace_memory_usage")
+            .AddOtlpExporter(otlpOptions =>
+            {
+                otlpOptions.Endpoint = new Uri("http://prodmonitor.dashboard:18889");
+            });
+    })
+    .WithTracing(tracing =>
+    {
+        tracing
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddEntityFrameworkCoreInstrumentation()
+            .AddOtlpExporter(otlpOptions =>
+            {
+                otlpOptions.Endpoint = new Uri("http://prodmonitor.dashboard:18889");
+            });
+    });
+
+builder.Logging.AddOpenTelemetry(logging => 
+    logging
+        .AddOtlpExporter(options => 
+            options.Endpoint = new Uri("http://prodmonitor.dashboard:18889")));
+
 var app = builder.Build();
+
+app.UseOpenTelemetryPrometheusScrapingEndpoint();
 
 using (var scope = app.Services.CreateScope())
 {
