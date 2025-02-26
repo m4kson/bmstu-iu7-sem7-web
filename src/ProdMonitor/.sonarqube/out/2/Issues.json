@@ -1,0 +1,3110 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Компилятор Microsoft (R) Visual C#",
+        "version": "4.11.0.0",
+        "fileVersion": "4.11.0-3.24365.8 (9e9c7c1d)",
+        "semanticVersion": "4.11.0",
+        "language": "ru-RU"
+      },
+      "results": [
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"AssemblyLines\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 38,
+                  "endLine": 10,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Details\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 32,
+                  "endLine": 11,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"DetailOrders\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 37,
+                  "endLine": 12,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"OrderDetails\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 37,
+                  "endLine": 13,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceReports\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 39,
+                  "endLine": 14,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceRequests\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 40,
+                  "endLine": 15,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Tractors\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 33,
+                  "endLine": 16,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Users\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 30,
+                  "endLine": 17,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Supplies\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Context/ProdMonitorContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 32,
+                  "endLine": 18,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"OrderDetails\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailOrderDb.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 16,
+                  "endLine": 22,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailOrderDb.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 51,
+                  "endLine": 19,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Detail\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/OrderDetailDb.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 16,
+                  "endLine": 19,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/OrderDetailDb.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 33,
+                  "endLine": 16,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Order\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/OrderDetailDb.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 16,
+                  "endLine": 19,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/OrderDetailDb.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 38,
+                  "endLine": 17,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"AssemblyLine\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 16,
+                  "endLine": 25,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 39,
+                  "endLine": 20,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"User\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 16,
+                  "endLine": 25,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 31,
+                  "endLine": 21,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceRequest\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 16,
+                  "endLine": 25,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 41,
+                  "endLine": 22,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"AssemblyLine\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 16,
+                  "endLine": 44,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 39,
+                  "endLine": 20,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"User\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 16,
+                  "endLine": 44,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 31,
+                  "endLine": 21,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceRequest\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 16,
+                  "endLine": 44,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 41,
+                  "endLine": 22,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Description\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceRequestDb.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 16,
+                  "endLine": 39,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceRequestDb.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"AssemblyLines\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailDb.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 52,
+                  "endLine": 17,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"OrderDetails\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 16,
+                  "endLine": 21,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailDb.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 51,
+                  "endLine": 18,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Tractors\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 16,
+                  "endLine": 26,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 47,
+                  "endLine": 21,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceReports\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 16,
+                  "endLine": 26,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 53,
+                  "endLine": 22,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceRequests\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 16,
+                  "endLine": 26,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 54,
+                  "endLine": 23,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Details\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 16,
+                  "endLine": 26,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 46,
+                  "endLine": 24,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Name\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 23,
+                  "endLine": 10,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Tractors\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 47,
+                  "endLine": 21,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceReports\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 53,
+                  "endLine": 22,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"ServiceRequests\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 54,
+                  "endLine": 23,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Details\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 46,
+                  "endLine": 24,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"Model\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 23,
+                  "endLine": 6,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"EngineType\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 23,
+                  "endLine": 8,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"EnginePower\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 23,
+                  "endLine": 9,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "свойство \"EcologicalStandard\", не допускающий значения NULL, должен содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения свойство, допускающего значение NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 16,
+                  "endLine": 52,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Разыменование вероятной пустой ссылки.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/DetailRepository.cs",
+                "region": {
+                  "startLine": 106,
+                  "startColumn": 17,
+                  "endLine": 106,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<AssemblyLine>\" не соответствует целевому типу \"List<AssemblyLine?>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/TractorConverter.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 108,
+                  "endLine": 32,
+                  "endColumn": 132
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Аргумент типа \"List<AssemblyLine?>\" запрещено использовать для параметра \"assemblyLines\" типа \"ICollection<AssemblyLine>\" в \"Tractor.Tractor(Guid id, string model, int releaseYear, string engineType, string enginePower, int frontTireSize, int backTireSize, int wheelsAmount, int tankCapacity, string ecologicalStandart, float length, float width, float cabinHeight, ICollection<AssemblyLine>? assemblyLines = null)\" из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/TractorConverter.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 32,
+                  "endLine": 32,
+                  "endColumn": 132
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<OrderDetail>\" не соответствует целевому типу \"List<OrderDetail?>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/DetailConverter.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 104,
+                  "endLine": 29,
+                  "endColumn": 127
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Аргумент типа \"List<AssemblyLine?>\" запрещено использовать для параметра \"assemblyLines\" типа \"ICollection<AssemblyLine>\" в \"Detail.Detail(Guid id, string name, string country, int amount, float price, int length, int height, int width, ICollection<AssemblyLine>? assemblyLines = null, ICollection<OrderDetail>? orderDetails = null)\" из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/DetailConverter.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 32,
+                  "endLine": 28,
+                  "endColumn": 132
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Аргумент типа \"List<OrderDetail?>\" запрещено использовать для параметра \"orderDetails\" типа \"ICollection<OrderDetail>\" в \"Detail.Detail(Guid id, string name, string country, int amount, float price, int length, int height, int width, ICollection<AssemblyLine>? assemblyLines = null, ICollection<OrderDetail>? orderDetails = null)\" из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/DetailConverter.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 31,
+                  "endLine": 29,
+                  "endColumn": 127
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<Tractor>\" не соответствует целевому типу \"List<Tractor?>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/AssemblyLineConverter.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 98,
+                  "endLine": 30,
+                  "endColumn": 117
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<Detail>\" не соответствует целевому типу \"List<Detail?>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/AssemblyLineConverter.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 95,
+                  "endLine": 31,
+                  "endColumn": 113
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Аргумент типа \"List<Tractor?>\" запрещено использовать для параметра \"tractors\" типа \"ICollection<Tractor>\" в \"AssemblyLine.AssemblyLine(Guid id, string name, float length, float height, float width, LineStatusType status, int downTime, int inspectionsPerYear, DateOnly lastInspection, DateOnly nextInspection, float defectRate, ICollection<Tractor>? tractors = null, ICollection<Detail>? details = null)\" из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/AssemblyLineConverter.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 27,
+                  "endLine": 30,
+                  "endColumn": 117
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Аргумент типа \"List<Detail?>\" запрещено использовать для параметра \"details\" типа \"ICollection<Detail>\" в \"AssemblyLine.AssemblyLine(Guid id, string name, float length, float height, float width, LineStatusType status, int downTime, int inspectionsPerYear, DateOnly lastInspection, DateOnly nextInspection, float defectRate, ICollection<Tractor>? tractors = null, ICollection<Detail>? details = null)\" из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/AssemblyLineConverter.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 26,
+                  "endLine": 31,
+                  "endColumn": 113
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<OrderDetail>\" не соответствует целевому типу \"List<OrderDetail?>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/DetailOrderConverter.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 109,
+                  "endLine": 27,
+                  "endColumn": 132
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Аргумент типа \"List<OrderDetail?>\" запрещено использовать для параметра \"orderDetails\" типа \"ICollection<OrderDetail>\" в \"DetailOrder.DetailOrder(Guid id, Guid userId, DetailOrderStatusType status, float totalPrice, DateTime orderDate, ICollection<OrderDetail>? orderDetails = null)\" из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/Converters/DetailOrderConverter.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 31,
+                  "endLine": 27,
+                  "endColumn": 132
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<AssemblyLineDb>\" не соответствует целевому типу \"List<AssemblyLineDb?>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/TractorRepository.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 107,
+                  "endLine": 40,
+                  "endColumn": 133
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8619",
+          "level": "warning",
+          "message": "Допустимость значения NULL в значении типа \"List<AssemblyLineDb?>\" не соответствует целевому типу \"ICollection<AssemblyLineDb>\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/TractorRepository.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 37,
+                  "endLine": 40,
+                  "endColumn": 133
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/DetailOrderRepository.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 25,
+                  "endLine": 51,
+                  "endColumn": 106
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/ServiceReportRepository.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 17,
+                  "endLine": 64,
+                  "endColumn": 84
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'AssemblyLines' 7 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 41,
+                  "endLine": 111,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 135,
+                  "startColumn": 41,
+                  "endLine": 135,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 41,
+                  "endLine": 186,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 242,
+                  "startColumn": 41,
+                  "endLine": 242,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 271,
+                  "startColumn": 24,
+                  "endLine": 271,
+                  "endColumn": 39
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 387,
+                  "startColumn": 23,
+                  "endLine": 387,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'integer' 20 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 54,
+                  "endLine": 23,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 58,
+                  "endLine": 24,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 56,
+                  "endLine": 25,
+                  "endColumn": 65
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 66,
+                  "endLine": 26,
+                  "endColumn": 75
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 58,
+                  "endLine": 29,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 54,
+                  "endLine": 43,
+                  "endColumn": 63
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 54,
+                  "endLine": 45,
+                  "endColumn": 63
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 46,
+                  "startColumn": 54,
+                  "endLine": 46,
+                  "endColumn": 63
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 53,
+                  "endLine": 47,
+                  "endColumn": 62
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 60,
+                  "startColumn": 59,
+                  "endLine": 60,
+                  "endColumn": 68
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 61,
+                  "endLine": 63,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 60,
+                  "endLine": 64,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 60,
+                  "endLine": 65,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 60,
+                  "endLine": 66,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 51,
+                  "endLine": 90,
+                  "endColumn": 60
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 52,
+                  "endLine": 91,
+                  "endColumn": 61
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 152,
+                  "startColumn": 54,
+                  "endLine": 152,
+                  "endColumn": 63
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 54,
+                  "endLine": 175,
+                  "endColumn": 63
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 176,
+                  "startColumn": 52,
+                  "endLine": 176,
+                  "endColumn": 61
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 204,
+                  "startColumn": 61,
+                  "endLine": 204,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "14": null,
+              "15": null,
+              "16": null,
+              "17": null,
+              "18": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Details' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 23,
+                  "endLine": 37,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 41,
+                  "endLine": 117,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 218,
+                  "startColumn": 41,
+                  "endLine": 218,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 288,
+                  "startColumn": 24,
+                  "endLine": 288,
+                  "endColumn": 33
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 381,
+                  "startColumn": 23,
+                  "endLine": 381,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Tractors' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 23,
+                  "endLine": 55,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 141,
+                  "startColumn": 41,
+                  "endLine": 141,
+                  "endColumn": 51
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 348,
+                  "startColumn": 24,
+                  "endLine": 348,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 375,
+                  "startColumn": 23,
+                  "endLine": 375,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Users' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 23,
+                  "endLine": 78,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 162,
+                  "startColumn": 41,
+                  "endLine": 162,
+                  "endColumn": 48
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 192,
+                  "startColumn": 41,
+                  "endLine": 192,
+                  "endColumn": 48
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 254,
+                  "startColumn": 41,
+                  "endLine": 254,
+                  "endColumn": 48
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 354,
+                  "startColumn": 24,
+                  "endLine": 354,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 390,
+                  "startColumn": 23,
+                  "endLine": 390,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'DetailOrders' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 23,
+                  "endLine": 147,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 212,
+                  "startColumn": 41,
+                  "endLine": 212,
+                  "endColumn": 55
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 277,
+                  "startColumn": 24,
+                  "endLine": 277,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 283,
+                  "startColumn": 24,
+                  "endLine": 283,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 378,
+                  "startColumn": 23,
+                  "endLine": 378,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'timestamp with time zone' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 154,
+                  "startColumn": 62,
+                  "endLine": 154,
+                  "endColumn": 88
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 64,
+                  "endLine": 174,
+                  "endColumn": 90
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 231,
+                  "startColumn": 61,
+                  "endLine": 231,
+                  "endColumn": 87
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 232,
+                  "startColumn": 62,
+                  "endLine": 232,
+                  "endColumn": 88
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'ServiceRequests' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 168,
+                  "startColumn": 23,
+                  "endLine": 168,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 248,
+                  "startColumn": 41,
+                  "endLine": 248,
+                  "endColumn": 58
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 332,
+                  "startColumn": 24,
+                  "endLine": 332,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 338,
+                  "startColumn": 24,
+                  "endLine": 338,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 343,
+                  "startColumn": 24,
+                  "endLine": 343,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 384,
+                  "startColumn": 23,
+                  "endLine": 384,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'OrderDetails' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 198,
+                  "startColumn": 23,
+                  "endLine": 198,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 294,
+                  "startColumn": 24,
+                  "endLine": 294,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 299,
+                  "startColumn": 24,
+                  "endLine": 299,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 304,
+                  "startColumn": 24,
+                  "endLine": 304,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 369,
+                  "startColumn": 23,
+                  "endLine": 369,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'ServiceReports' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 224,
+                  "startColumn": 23,
+                  "endLine": 224,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 310,
+                  "startColumn": 24,
+                  "endLine": 310,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 316,
+                  "startColumn": 24,
+                  "endLine": 316,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 321,
+                  "startColumn": 24,
+                  "endLine": 321,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 327,
+                  "startColumn": 24,
+                  "endLine": 327,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240825165433_Initial.cs",
+                "region": {
+                  "startLine": 372,
+                  "startColumn": 23,
+                  "endLine": 372,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/UserRepository.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 17,
+                  "endLine": 40,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Supplies' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240910015612_AddSupplyTable.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240910015612_AddSupplyTable.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 24,
+                  "endLine": 36,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240910015612_AddSupplyTable.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 24,
+                  "endLine": 41,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240910015612_AddSupplyTable.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 23,
+                  "endLine": 50,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3604",
+          "level": "warning",
+          "message": "Remove the member initializer, all constructors set an initial value for the member.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailDb.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 69,
+                  "endLine": 19,
+                  "endColumn": 91
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Users' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20250216063101_AddTwoFactorToUser.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 24,
+                  "endLine": 16,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20250216063101_AddTwoFactorToUser.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 24,
+                  "endLine": 22,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20250216063101_AddTwoFactorToUser.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 24,
+                  "endLine": 32,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20250216063101_AddTwoFactorToUser.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 24,
+                  "endLine": 36,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'AssemblyLines' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240929081318_RemoveProductionAddDefectRate.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 24,
+                  "endLine": 15,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240929081318_RemoveProductionAddDefectRate.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 24,
+                  "endLine": 19,
+                  "endColumn": 39
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240929081318_RemoveProductionAddDefectRate.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 24,
+                  "endLine": 31,
+                  "endColumn": 39
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Migrations/20240929081318_RemoveProductionAddDefectRate.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 24,
+                  "endLine": 39,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S107",
+          "level": "warning",
+          "message": "Constructor has 13 parameters, which is greater than the 7 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/UserDb.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 22,
+                  "endLine": 43,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S107",
+          "level": "warning",
+          "message": "Constructor has 13 parameters, which is greater than the 7 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/TractorDb.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 25,
+                  "endLine": 35,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S107",
+          "level": "warning",
+          "message": "Constructor has 8 parameters, which is greater than the 7 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/ServiceReportDb.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 31,
+                  "endLine": 32,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S107",
+          "level": "warning",
+          "message": "Constructor has 11 parameters, which is greater than the 7 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/AssemblyLIneDb.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 30,
+                  "endLine": 37,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S107",
+          "level": "warning",
+          "message": "Constructor has 8 parameters, which is greater than the 7 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Models/DetailDb.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 24,
+                  "endLine": 28,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1860",
+          "level": "note",
+          "message": "Для ясности и для обеспечения производительности старайтесь сравнивать 'Count' с 0 вместо того, чтобы использовать 'Any()'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/DetailOrderRepository.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 45,
+                  "endLine": 39,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "DiagnosticPropertyKey": "Count"
+            }
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/DetailRepository.cs",
+                "region": {
+                  "startLine": 112,
+                  "startColumn": 23,
+                  "endLine": 112,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/SupplyRepository.cs",
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 23,
+                  "endLine": 48,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'createdOrderDetail'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/DetailOrderRepository.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 29,
+                  "endLine": 49,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'roleUpdate' to 'role' to match the interface declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.DataAccess/Repositories/UserRepository.cs",
+                "region": {
+                  "startLine": 182,
+                  "startColumn": 81,
+                  "endLine": 182,
+                  "endColumn": 91
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1860": {
+          "id": "CA1860",
+          "shortDescription": "Не используйте метод расширения 'Enumerable.Any()'",
+          "fullDescription": "Старайтесь использовать свойства 'IsEmpty', 'Count' или 'Length' в зависимости от доступности вместо вызова 'Enumerable.Any()'. Намерение является более четким и более эффективным по сравнению с использованием метода расширения 'Enumerable.Any()'.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1860",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Разыменование вероятной пустой ссылки.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора \"required\" или объявления значения, допускающего значение NULL.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8619": {
+          "id": "CS8619",
+          "shortDescription": "Допустимость значения NULL для ссылочных типов в значении не соответствует целевому типу.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8619)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8620": {
+          "id": "CS8620",
+          "shortDescription": "Аргумент запрещено использовать для параметра из-за различий в отношении допустимости значений NULL для ссылочных типов.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8620)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S107": {
+          "id": "S107",
+          "shortDescription": "Methods should not have too many parameters",
+          "fullDescription": "Methods with a long parameter list are difficult to use because maintainers must figure out the role of each parameter and keep track of their position.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-107",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S112": {
+          "id": "S112",
+          "shortDescription": "General or reserved exceptions should never be thrown",
+          "fullDescription": "This rule raises an issue when a general or reserved exception is thrown.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-112",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1192": {
+          "id": "S1192",
+          "shortDescription": "String literals should not be duplicated",
+          "fullDescription": "Duplicated string literals make the process of refactoring complex and error-prone, as any change would need to be propagated on all occurrences.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1192",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Commented-out code distracts the focus from the actual executed code. It creates a noise that increases maintenance code. And because it is never executed, it quickly becomes out of date and invalid.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "An unused local variable is a variable that has been declared but is not used anywhere in the block of code where it is defined. It is dead code, contributing to unnecessary complexity and leading to confusion when reading the code. Therefore, it should be removed from your code to maintain clarity and efficiency.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3604": {
+          "id": "S3604",
+          "shortDescription": "Member initializer values should not be redundant",
+          "fullDescription": "Fields, properties and events can be initialized either inline or in the constructor. Initializing them inline and in the constructor at the same time is redundant; the inline initialization will be overridden.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3604",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S927": {
+          "id": "S927",
+          "shortDescription": "Parameter names should match base declaration and other partial definitions",
+          "fullDescription": "Parameters are part of the method signature and its identity.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

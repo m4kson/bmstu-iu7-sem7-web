@@ -14,12 +14,14 @@
 
     <ItemGroup>
       <PackageReference Include="EntityFramework" Version="6.5.1" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Metrics" Version="3.3.4" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="OpenTelemetry" Version="1.11.1" />
       <PackageReference Include="OpenTelemetry.Contrib.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta2" />
+      <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.11.1" />
       <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.6.0-rc.1" />
       <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.1" />
       <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.11.0-beta.1" />
@@ -32,7 +34,7 @@
       <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
       <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
       <PackageReference Include="Serilog.Extensions" Version="8.0.2" />
-      <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.1-dev-02307" />
       <PackageReference Include="Serilog.Extensions.Logging" Version="9.0.1-dev-02308" />
       <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
