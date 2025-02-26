@@ -68,44 +68,57 @@ builder.Services.AddTransient<ITractorRepository, TractorRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 //OpenTelemetry
+
+var resource = ResourceBuilder.CreateDefault().AddService("ProdMonitorAPI");
+
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(resource => resource.AddService("ProdMonitorAPI"))
+    .ConfigureResource(resource => resource
+        .AddService("ProdMonitorAPI")
+        .AddAttributes(new Dictionary<string, object>
+        {
+            { "service.type", "application" }
+        }))
     .WithMetrics(metrics =>
     {
-        // Общие метрики приложения
         metrics
             .AddHttpClientInstrumentation()
             .AddAspNetCoreInstrumentation()
             .AddProcessInstrumentation()
             .AddPrometheusExporter();
-            // .AddOtlpExporter(otlpOptions =>
-            // {
-            //     otlpOptions.Endpoint = new Uri("http://prodmonitor.dashboard:18889");
-            // });
-
-        metrics
-            .AddMeter("trace_cpu_usage", "trace_memory_usage")
-            .AddOtlpExporter(otlpOptions =>
-            {
-                otlpOptions.Endpoint = new Uri("http://prodmonitor.dashboard:18889");
-            });
     })
     .WithTracing(tracing =>
     {
         tracing
             .AddAspNetCoreInstrumentation()
             .AddHttpClientInstrumentation()
-            .AddEntityFrameworkCoreInstrumentation()
-            .AddOtlpExporter(otlpOptions =>
-            {
-                otlpOptions.Endpoint = new Uri("http://prodmonitor.dashboard:18889");
-            });
+            .AddEntityFrameworkCoreInstrumentation();
     });
 
-builder.Logging.AddOpenTelemetry(logging => 
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resource => resource
+        .AddService("ProdMonitorAPI-Monitoring")
+        .AddAttributes(new Dictionary<string, object>
+        {
+            { "service.type", "monitoring" }
+        }))
+    .WithMetrics(metrics =>
+    {
+        metrics
+            .AddProcessInstrumentation()
+            .AddPrometheusExporter();
+    });
+
+builder.Logging.AddOpenTelemetry(logging =>
     logging
-        .AddOtlpExporter(options => 
-            options.Endpoint = new Uri("http://prodmonitor.dashboard:18889")));
+        .SetResourceBuilder(resource)
+        //.AddConsoleExporter()
+        .AddOtlpExporter(otlpOptions =>
+        {
+            otlpOptions.Endpoint =
+                new Uri("http://prodmonitor.dashboard:18889");
+        })
+    );
+    
 
 var app = builder.Build();
 

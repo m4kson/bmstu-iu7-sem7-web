@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdMonitor.Test", "ProdMon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdMonitor.DataAccess", "ProdMonitor.DataAccess\ProdMonitor.DataAccess.csproj", "{4E8515FE-EF1C-4791-B8B1-DEBF71226198}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdMonitor.ConsoleApp", "ProdMonitor.ConsoleApp\ProdMonitor.ConsoleApp.csproj", "{0AB6274E-9D45-40BE-BA06-218AE5C68AA7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdMonitor.Web", "ProdMonitor.Web\ProdMonitor.Web.csproj", "{0989FCE8-8827-4FFB-90F2-3C3140BBA472}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdMonitor.IntegrationTests", "ProdMonitor.IntegrationTests\ProdMonitor.IntegrationTests.csproj", "{8812454E-FAD9-4995-B87B-FF3DFBA91989}"
@@ -43,10 +41,6 @@ Global
 		{4E8515FE-EF1C-4791-B8B1-DEBF71226198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E8515FE-EF1C-4791-B8B1-DEBF71226198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E8515FE-EF1C-4791-B8B1-DEBF71226198}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0AB6274E-9D45-40BE-BA06-218AE5C68AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AB6274E-9D45-40BE-BA06-218AE5C68AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0AB6274E-9D45-40BE-BA06-218AE5C68AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0AB6274E-9D45-40BE-BA06-218AE5C68AA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0989FCE8-8827-4FFB-90F2-3C3140BBA472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0989FCE8-8827-4FFB-90F2-3C3140BBA472}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0989FCE8-8827-4FFB-90F2-3C3140BBA472}.Release|Any CPU.ActiveCfg = Release|Any CPU
