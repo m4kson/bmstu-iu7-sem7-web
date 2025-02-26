@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Компилятор Microsoft (R) Visual C#",
+        "version": "4.11.0.0",
+        "fileVersion": "4.11.0-3.24365.8 (9e9c7c1d)",
+        "semanticVersion": "4.11.0",
+        "language": "ru-RU"
+      },
+      "results": [
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Разыменование вероятной пустой ссылки.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/SpecialistTestUseCase.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 26,
+                  "endLine": 54,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Разыменование вероятной пустой ссылки.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/SpecialistTestUseCase.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 23,
+                  "endLine": 63,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3415",
+          "level": "warning",
+          "message": "Make sure these 2 arguments are in the correct order: expected value, actual value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/SpecialistTestUseCase.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 26,
+                  "endLine": 80,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Член \"SeedTestData\" не обращается к данным экземпляров, поэтому его можно пометить как статический.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/E2EApplicationFactory.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 24,
+                  "endLine": 38,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "xUnit2000",
+          "level": "warning",
+          "message": "The literal or constant value \"specialist\" should be passed as the 'expected' argument in the call to 'Assert.Equal(expected, actual)' in method 'SpecialistTestUseCase_WithCorrectData' on type 'SpecialistTestUseCase'. Swap the parameter values.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/SpecialistTestUseCase.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 13,
+                  "endLine": 80,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Пометьте члены как статические",
+          "fullDescription": "Члены, которые не обращаются к данным экземпляров и не вызывают методы экземпляров, можно пометить как статические. После этого компилятор создаст невиртуальные места для вызова этих членов. Это может привести к ощутимому росту производительности для чувствительного к производительности кода.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Разыменование вероятной пустой ссылки.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S3415": {
+          "id": "S3415",
+          "shortDescription": "Assertion arguments should be passed in the correct order",
+          "fullDescription": "The standard assertions library methods such as AreEqual and AreSame in MSTest and NUnit, or Equal and Same in XUnit, expect the first argument to be the expected value and the second argument to be the actual value.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3415",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "xUnit2000": {
+          "id": "xUnit2000",
+          "shortDescription": "Constants and literals should be the expected argument",
+          "defaultLevel": "warning",
+          "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2000",
+          "properties": {
+            "category": "Assertions",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}

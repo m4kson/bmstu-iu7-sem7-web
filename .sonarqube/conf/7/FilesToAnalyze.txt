@@ -1,0 +1,9 @@
+﻿/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Steps/AuthenticationSteps.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Steps/CangePasswordSteps.cs
+/Users/m4ks0n/.nuget/packages/microsoft.net.test.sdk/17.14.0-preview-25107-01/build/net8.0/Microsoft.NET.Test.Sdk.Program.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Features/Authentication.feature
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Features/ChangePassword.feature
+/Users/m4ks0n/.nuget/packages/xunit.runner.visualstudio/2.5.3/build/net6.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/m4ks0n/.nuget/packages/xunit.runner.visualstudio/2.5.3/build/net6.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/m4ks0n/.nuget/packages/xunit.runner.visualstudio/2.5.3/build/net6.0/xunit.runner.utility.netcoreapp10.dll
+/Users/m4ks0n/.nuget/packages/specflow.xunit/3.9.74/lib/netstandard2.0/TechTalk.SpecFlow.xUnit.SpecFlowPlugin.dll
