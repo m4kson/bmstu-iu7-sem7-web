@@ -1,0 +1,13 @@
+﻿/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/E2EApplicationFactory.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/AssemblyLineBuilder.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/DetailBuilder.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/DetailOrderMother.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/ServiceReportMother.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/ServiceRequestMother.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/TractorBuilder.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/Helpers/UserMother.cs
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/SpecialistTestUseCase.cs
+/Users/m4ks0n/.nuget/packages/microsoft.net.test.sdk/17.14.0-preview-25107-01/build/net8.0/Microsoft.NET.Test.Sdk.Program.cs
+/Users/m4ks0n/.nuget/packages/xunit.runner.visualstudio/2.5.3/build/net6.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/m4ks0n/.nuget/packages/xunit.runner.visualstudio/2.5.3/build/net6.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/m4ks0n/.nuget/packages/xunit.runner.visualstudio/2.5.3/build/net6.0/xunit.runner.utility.netcoreapp10.dll

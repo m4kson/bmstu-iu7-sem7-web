@@ -1,0 +1,6 @@
+projectKey=ProdMonitor
+serverUrl=http://localhost:9000
+serverVersion=25.2.0.102705
+dashboardUrl=http://localhost:9000/dashboard?id=ProdMonitor
+ceTaskId=3116b7ba-b49f-4188-9837-32e5d1295241
+ceTaskUrl=http://localhost:9000/api/ce/task?id=3116b7ba-b49f-4188-9837-32e5d1295241

@@ -90,6 +90,8 @@ namespace ProdMonitor.DataAccess.Repositories
                 user.BirthDay = userData.BirthDay;
                 user.Sex = SexTypeConverter.ToDb(userData.Sex);
                 user.Role = RoleTypeConverter.ToDb(userData.Role);
+                user.TwoFactorCode = userData.TwoFactorCode;
+                user.TwoFactorExpiration = userData.TwoFactorExpiration;
 
                 await _context.SaveChangesAsync();
                 return UserConverter.ToDomain(user)!;

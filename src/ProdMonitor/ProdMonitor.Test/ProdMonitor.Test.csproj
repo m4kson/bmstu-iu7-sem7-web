@@ -14,10 +14,12 @@
     <PackageReference Include="Allure.SpecFlow" Version="2.12.1" />
     <PackageReference Include="Allure.Xunit" Version="2.12.1" />
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Metrics" Version="3.3.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0-rc.1.24451.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0-preview-25107-01" />
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="OpenCover" Version="4.7.1221" />
+    <PackageReference Include="OpenTelemetry" Version="1.11.1" />
     <PackageReference Include="Serilog" Version="4.0.1" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.2" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />

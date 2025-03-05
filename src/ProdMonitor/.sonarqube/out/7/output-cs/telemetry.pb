@@ -1,0 +1,1 @@
+„Rn/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.E2E/ProdMonitor.E2E.csproj¢net8.0òCSharp12

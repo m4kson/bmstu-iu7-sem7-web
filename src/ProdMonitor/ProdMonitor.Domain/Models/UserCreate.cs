@@ -11,7 +11,9 @@ namespace ProdMonitor.Domain.Models
         byte[] passwordSalt,
         DateOnly birthDay,
         SexType sex,
-        RoleType role)
+        RoleType role,
+        string? twoFactorCode = null,
+        DateTime? twoFactorExpiration = null)
     {
         public string Name { get; set; } = name;
         public string Surname { get; set; } = surname;
@@ -23,5 +25,7 @@ namespace ProdMonitor.Domain.Models
         public DateOnly BirthDay { get; set; } = birthDay;
         public SexType Sex { get; set; } = sex;
         public RoleType Role { get; set; } = role;
+        public string? TwoFactorCode { get; set; } = twoFactorCode;
+        public DateTime? TwoFactorExpiration { get; set; } = twoFactorExpiration;
     }
 }

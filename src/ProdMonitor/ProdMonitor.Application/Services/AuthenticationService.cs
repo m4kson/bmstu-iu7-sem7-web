@@ -13,14 +13,17 @@ namespace ProdMonitor.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly ILogger _logger;
+        private readonly IEmailService _emailService;
         private readonly AuthenticationServiceConfiguration _authenticationServiceConfiguration;
 
         public AuthenticationService(IUserRepository userRepository,
             ILogger logger,
+            IEmailService emailService,
             IOptions<AuthenticationServiceConfiguration> authenticationServiceConfiguration)
         {
             _userRepository = userRepository;
             _logger = logger;
+            _emailService = emailService;
             _authenticationServiceConfiguration = authenticationServiceConfiguration.Value;
         }
 
@@ -41,7 +44,7 @@ namespace ProdMonitor.Application.Services
                     _logger.Warning("Login failed: Incorrect password for email {Email}", authModel.Email);
                     throw new WrongPasswordException("Wrong password");
                 }
-
+                
                 _logger.Information("User {Email} successfully logged in", authModel.Email);
                 return user;
             }
@@ -115,6 +118,67 @@ namespace ProdMonitor.Application.Services
             }
         }
 
+        public async Task<User> ChangePasswordAsync(Guid userId, string newPassword, string oldPassword)
+        {
+            try
+            {
+                _logger.Information("Attempt to change password for user with ID {UserId}", userId);
+                if (newPassword.Length < _authenticationServiceConfiguration.MinPasswordLength)
+                {
+                    _logger.Error(
+                        "Password change failed: Please ensure your password are longer than {MinPasswordLength}",
+                        _authenticationServiceConfiguration.MinPasswordLength);
+                    throw new ArgumentException(
+                        $"Please ensure your password are longer than {_authenticationServiceConfiguration.MinPasswordLength}");
+                }
+
+                var user = await _userRepository.GetUserByIdAsync(userId);
+                if (user == null)
+                {
+                    _logger.Warning("Password change failed: User with ID {UserId} not found", userId);
+                    throw new UserNotFoundException($"User with ID {userId} not found");
+                }
+                
+                if (!VerifyPasswordHash(oldPassword, user.PasswordHash, user.PasswordSalt))
+                {
+                    _logger.Warning("Password change failed: Incorrect old password for user with ID {UserId}", userId);
+                    throw new WrongPasswordException("Wrong password");
+                }
+
+                byte[] passwordHash, passwordSalt;
+                CreatePasswordHash(newPassword, out passwordHash, out passwordSalt);
+
+                var updatedUser = new UserCreate(name: user.Name,
+                    surname: user.Surname,
+                    patronymic: user.Patronymic,
+                    department: user.Department,
+                    email: user.Email,
+                    passwordHash: passwordHash,
+                    passwordSalt: passwordSalt,
+                    birthDay: user.BirthDay,
+                    sex: user.Sex,
+                    role: user.Role);
+
+                var changedUser = await _userRepository.UpdateUserAsync(userId, updatedUser);
+
+                _logger.Information("Password for user with ID {UserId} successfully changed", userId);
+                return changedUser;
+            }
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Password change failed for user with ID {UserId}", userId);
+                throw new UserServiceException("Failed to change password", ex);
+            }
+        }
+
         public void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
@@ -137,9 +201,91 @@ namespace ProdMonitor.Application.Services
         {
             if (user.Role != requiredRole)
             {
-                _logger.Warning("Unauthorized access attempt by user {Email}. Required role: {RequiredRole}, actual role: {ActualRole}",
-                                user.Email, requiredRole, user.Role);
+                _logger.Warning(
+                    "Unauthorized access attempt by user {Email}. Required role: {RequiredRole}, actual role: {ActualRole}",
+                    user.Email, requiredRole, user.Role);
                 throw new UnauthorizedAccessException($"User does not have the required role: {requiredRole}");
+            }
+        }
+
+        private string GenerateTwoFactorCode()
+        {
+            var random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        public async Task SendTwoFactorCode(User user)
+        {
+            try
+            {
+                var code = GenerateTwoFactorCode();
+
+                var updatedUser = new UserCreate(name: user.Name,
+                    surname: user.Surname,
+                    patronymic: user.Patronymic,
+                    department: user.Department,
+                    email: user.Email,
+                    passwordHash: user.PasswordHash,
+                    passwordSalt: user.PasswordSalt,
+                    birthDay: user.BirthDay,
+                    sex: user.Sex,
+                    role: user.Role,
+                    twoFactorCode: code,
+                    twoFactorExpiration: DateTime.UtcNow.AddMinutes(10));
+
+                await _userRepository.UpdateUserAsync(user.Id, updatedUser);
+                
+                await _emailService.SendEmailAsync(user.Email, "Ваш код", $"Ваш код 2FA: {code}");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to send 2FA code to user with ID {UserId}.", user.Id);
+                throw new UserServiceException("Failed to send 2FA code", ex);
+            }
+        }
+
+        public async Task<bool> VerifyTwoFactorCodeAsync(Guid userId, string code)
+        {
+            try
+            {
+                var user = await _userRepository.GetUserByIdAsync(userId);
+                if (user == null)
+                {
+                    _logger.Warning("User with ID {UserId} not found.", userId);
+                    throw new UserNotFoundException($"User with id {userId} not found");
+                }
+
+                if (user.TwoFactorCode != code || user.TwoFactorExpiration < DateTime.UtcNow)
+                {
+                    return false;
+                }
+
+                var updatedUser = new UserCreate(name: user.Name,
+                    surname: user.Surname,
+                    patronymic: user.Patronymic,
+                    department: user.Department,
+                    email: user.Email,
+                    passwordHash: user.PasswordHash,
+                    passwordSalt: user.PasswordSalt,
+                    birthDay: user.BirthDay,
+                    sex: user.Sex,
+                    role: user.Role,
+                    twoFactorCode: null,
+                    twoFactorExpiration: null);
+
+                await _userRepository.UpdateUserAsync(user.Id, updatedUser);
+
+                return true;
+            }
+            catch (UserNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Failed to verify 2FA code for user with ID {UserId}.", userId);
+                throw new UserServiceException("Failed to verify 2FA code", ex);
             }
         }
     }

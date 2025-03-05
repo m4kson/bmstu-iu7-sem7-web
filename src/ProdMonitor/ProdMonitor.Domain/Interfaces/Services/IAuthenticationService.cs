@@ -14,5 +14,11 @@ namespace ProdMonitor.Domain.Interfaces.Services
         bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt);
 
         void EnsureUserHasRole(User user, RoleType requiredRole);
+
+        Task SendTwoFactorCode(User user);
+
+        Task<bool> VerifyTwoFactorCodeAsync(Guid userId, string code);
+
+        Task<User> ChangePasswordAsync(Guid userId, string newPassword, string oldPassword);
     }
 }

@@ -1,7 +1,14 @@
+using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Logs;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Extensions.Hosting;
 using ProdMonitor.Application.Services;
 using ProdMonitor.DataAccess.Context;
 using ProdMonitor.DataAccess.Repositories;
@@ -40,6 +47,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddSingleton(Log.Logger);
+builder.Services.AddSingleton<IEmailService, EmailService>();
 
 builder.Services.AddTransient<IAssemblyLineService, AssemblyLineService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
@@ -59,7 +67,62 @@ builder.Services.AddTransient<IServiceRequestRepository, ServiceRequestRepositor
 builder.Services.AddTransient<ITractorRepository, TractorRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 
+//OpenTelemetry
+
+var resource = ResourceBuilder.CreateDefault().AddService("ProdMonitorAPI");
+
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resource => resource
+        .AddService("ProdMonitorAPI")
+        .AddAttributes(new Dictionary<string, object>
+        {
+            { "service.type", "application" }
+        }))
+    .WithMetrics(metrics =>
+    {
+        metrics
+            .AddHttpClientInstrumentation()
+            .AddAspNetCoreInstrumentation()
+            .AddProcessInstrumentation()
+            .AddPrometheusExporter();
+    })
+    .WithTracing(tracing =>
+    {
+        tracing
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddEntityFrameworkCoreInstrumentation();
+    });
+
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resource => resource
+        .AddService("ProdMonitorAPI-Monitoring")
+        .AddAttributes(new Dictionary<string, object>
+        {
+            { "service.type", "monitoring" }
+        }))
+    .WithMetrics(metrics =>
+    {
+        metrics
+            .AddProcessInstrumentation()
+            .AddPrometheusExporter();
+    });
+
+builder.Logging.AddOpenTelemetry(logging =>
+    logging
+        .SetResourceBuilder(resource)
+        //.AddConsoleExporter()
+        .AddOtlpExporter(otlpOptions =>
+        {
+            otlpOptions.Endpoint =
+                new Uri("http://prodmonitor.dashboard:18889");
+        })
+    );
+    
+
 var app = builder.Build();
+
+app.UseOpenTelemetryPrometheusScrapingEndpoint();
 
 using (var scope = app.Services.CreateScope())
 {

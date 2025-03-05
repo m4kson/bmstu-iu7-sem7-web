@@ -1,0 +1,1 @@
+ŸRˆ/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.IntegrationTests/ProdMonitor.IntegrationTests.csproj¢net8.0òCSharp12

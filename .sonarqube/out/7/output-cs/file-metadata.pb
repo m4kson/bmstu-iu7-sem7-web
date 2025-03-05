@@ -1,0 +1,10 @@
+®
+ú/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8†
+î/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/obj/Debug/net8.0/ProdMonitor.BDDTests.GlobalUsings.g.csutf-8ê
+Ñ/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/obj/Debug/net8.0/xUnit.AssemblyHooks.csutf-8û
+í/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/obj/Debug/net8.0/ProdMonitor.BDDTests.AssemblyInfo.csutf-8á
+|/Users/m4ks0n/.nuget/packages/microsoft.net.test.sdk/17.14.0-preview-25107-01/build/net8.0/Microsoft.NET.Test.Sdk.Program.csutf-8Å
+x/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Steps/CangePasswordSteps.csutf-8Ç
+y/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Steps/AuthenticationSteps.csutf-8ä
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Features/ChangePassword.feature.csutf-8ä
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.BDDTests/Features/Authentication.feature.csutf-8

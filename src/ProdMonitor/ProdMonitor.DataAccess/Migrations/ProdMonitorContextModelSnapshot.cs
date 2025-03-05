@@ -384,6 +384,12 @@ namespace ProdMonitor.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("TwoFactorCode")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("TwoFactorExpiration")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Id")

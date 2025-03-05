@@ -3,11 +3,19 @@ version: '3.8'
 networks:
   default:
     name: 'prodmonitor-network'
+  monitoring:
+    driver: bridge
 
 volumes:
   postgres_data:
   pm-logs:
   pgadmin_data:
+  prometheus_data:
+  grafana_data:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonarqube_temp:
 
 services:
   db:
@@ -25,11 +33,22 @@ services:
     build: .
     environment:
       ConnectionStrings__DefaultConnection: "User ID=m4ks0n;Password=admin;Server=db;Port=5432;Database=ProdMonitor"
-      
+      ASPNETCORE_URLS: "http://+:5091"
+      ASPNETCORE_ENVIRONMENT: Development
+
     depends_on:
       - db
+
     stdin_open: true
     tty: true  
+
+    ports:
+      - "5091:5091"
+
+    networks:
+      - default
+      - monitoring
+      
 
   pgadmin:
     image: dpage/pgadmin4:latest
@@ -44,3 +63,66 @@ services:
       - "5050:80"
     volumes:
       - pgadmin_data:/var/lib/pgadmin
+
+
+  prodmonitor.dashboard:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:latest
+    container_name: dashboard
+    ports:
+      - "18888:18888"
+      - "4317:18889"
+    networks:
+      - default
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+      - default
+
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarqube
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    ports:
+      - "9000:9000"
+    restart: always
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+      - sonarqube_temp:/opt/sonarqube/temp
+
+  # jaeger:
+  #   image: jaegertracing/all-in-one:latest
+  #   container_name: jaeger
+  #   ports:
+  #     - "5775:5775"    # Thrift over UDP
+  #     - "6831:6831"    # Jaeger agent port (UDP)
+  #     - "6832:6832"    # Jaeger agent port (UDP)
+  #     - "5778:5778"    # Jaeger UI
+  #     - "16686:16686"  # Jaeger Web UI (accessible on localhost:16686)
+  #     - "14250:14250"  # Jaeger gRPC
+  #     - "14268:14268"  # Jaeger HTTP API
+  #     - "9411:9411"    # Zipkin HTTP endpoint (for compatibility)
+
+  #   environment:
+  #     - COLLECTOR_ZIPKIN_HTTP_HTTP_PORT=9411
+  #   networks:
+  #     - default
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring

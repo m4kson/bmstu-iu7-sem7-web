@@ -1,0 +1,15 @@
+§
+ò/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/obj/Debug/net8.0/ProdMonitor.Application.AssemblyInfo.csutf-8´
+ü/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8¶
+ö/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/obj/Debug/net8.0/ProdMonitor.Application.GlobalUsings.g.csutf-8Ä
+w/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/UserService.csutf-8É
+z/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/TractorService.csutf-8Ç
+y/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/SupplyService.csutf-8ã
+Å/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/ServiceRequestService.csutf-8ä
+Ä/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/ServiceReportService.csutf-8Å
+x/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/EmailService.csutf-8Ç
+y/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/DetailService.csutf-8á
+~/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/DetailOrderService.csutf-8ß
+ù/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/Configurations/AuthenticationServiceConfiguration.csutf-8ã
+Å/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/AuthenticationService.csutf-8à
+/Users/m4ks0n/study/IU7/sem7/testing/bmstu-iu7-sem7-web/src/ProdMonitor/ProdMonitor.Application/Services/AssemblyLineService.csutf-8

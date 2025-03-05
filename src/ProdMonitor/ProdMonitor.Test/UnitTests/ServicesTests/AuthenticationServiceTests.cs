@@ -18,6 +18,7 @@ namespace ProdMonitor.Test.UnitTests
     {
         private readonly Mock<IUserRepository> _userRepositoryMock;
         private readonly Mock<ILogger> _mockLogger;
+        private readonly Mock<IEmailService> _mockEmailService;
         private readonly AuthenticationService _authService;
         private readonly Mock<IOptions<AuthenticationServiceConfiguration>> _mockConfig;
 
@@ -25,6 +26,7 @@ namespace ProdMonitor.Test.UnitTests
         {
             _userRepositoryMock = new Mock<IUserRepository>();
             _mockLogger = new Mock<ILogger>();
+            _mockEmailService = new Mock<IEmailService>();
             
             _mockConfig = new Mock<IOptions<AuthenticationServiceConfiguration>>();
             _mockConfig.Setup(c => c.Value).Returns(new AuthenticationServiceConfiguration
@@ -32,7 +34,7 @@ namespace ProdMonitor.Test.UnitTests
                 MinPasswordLength = 8
             });
 
-            _authService = new AuthenticationService(_userRepositoryMock.Object, _mockLogger.Object, _mockConfig.Object);
+            _authService = new AuthenticationService(_userRepositoryMock.Object, _mockLogger.Object, _mockEmailService.Object, _mockConfig.Object);
         }
 
         [Fact]

@@ -14,7 +14,9 @@
         <PackageReference Include="FluentAssertions" Version="7.0.0-alpha.5" />
         <PackageReference Include="FluentResults.StatusCodes" Version="1.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.10" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.Metrics" Version="3.3.4" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0-preview-25107-01" />
+        <PackageReference Include="OpenTelemetry" Version="1.11.1" />
         <PackageReference Include="Testcontainers" Version="4.0.0" />
         <PackageReference Include="Testcontainers.PostgreSql" Version="4.0.0" />
         <PackageReference Include="xunit" Version="2.5.3"/>

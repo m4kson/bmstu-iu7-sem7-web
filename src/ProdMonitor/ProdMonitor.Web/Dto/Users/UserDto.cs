@@ -14,7 +14,9 @@ public class UserDto(
     byte[] passwordSalt,
     DateOnly birthDay,
     SexTypeDto sex,
-    RoleTypeDto role)
+    RoleTypeDto role,
+    string? twoFactorCode,
+    DateTime? twoFactorExpiration)
 {
     [JsonPropertyName("id")]
     [JsonRequired]
@@ -59,4 +61,10 @@ public class UserDto(
     [JsonPropertyName("role")]
     [JsonRequired]
     public RoleTypeDto Role { get; set; } = role;
+    
+    [JsonPropertyName("twoFactorCode")]
+    public string? TwoFactorCode { get; set; } = twoFactorCode;
+    
+    [JsonPropertyName("twoFactorExpiration")]
+    public DateTime? TwoFactorExpiration { get; set; } = twoFactorExpiration;
 }
